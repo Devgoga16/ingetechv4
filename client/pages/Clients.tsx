@@ -8,7 +8,8 @@ export default function Clients() {
       category: "Residencial",
       icon: Home,
       description: "Proyectos de viviendas de alta gama en Lima metropolitana",
-      image: "https://images.pexels.com/photos/5691494/pexels-photo-5691494.jpeg",
+      image:
+        "https://images.pexels.com/photos/5691494/pexels-photo-5691494.jpeg",
       logo: "https://images.pexels.com/photos/6342786/pexels-photo-6342786.jpeg",
     },
     {
@@ -16,7 +17,8 @@ export default function Clients() {
       category: "Comercial",
       icon: Store,
       description: "Centros de compras y espacios retail de gran envergadura",
-      image: "https://images.pexels.com/photos/2861656/pexels-photo-2861656.jpeg",
+      image:
+        "https://images.pexels.com/photos/2861656/pexels-photo-2861656.jpeg",
       logo: "https://images.pexels.com/photos/291539/pexels-photo-291539.jpeg",
     },
     {
@@ -39,7 +41,8 @@ export default function Clients() {
       name: "Grupo Empresarial Andino",
       category: "Mixto",
       icon: Briefcase,
-      description: "Proyectos multidisciplinarios y mixtos en diferentes regiones",
+      description:
+        "Proyectos multidisciplinarios y mixtos en diferentes regiones",
       image: "https://images.pexels.com/photos/448828/pexels-photo-448828.jpeg",
       logo: "https://images.pexels.com/photos/6317765/pexels-photo-6317765.jpeg",
     },
@@ -48,7 +51,8 @@ export default function Clients() {
       category: "Salud",
       icon: Building2,
       description: "Hospitales, clínicas y centros médicos especializados",
-      image: "https://images.pexels.com/photos/19921278/pexels-photo-19921278.jpeg",
+      image:
+        "https://images.pexels.com/photos/19921278/pexels-photo-19921278.jpeg",
       logo: "https://images.pexels.com/photos/6320167/pexels-photo-6320167.jpeg",
     },
   ];
@@ -66,7 +70,8 @@ export default function Clients() {
               Nuestros Clientes
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Empresas líderes confían en nuestras soluciones de elevación y movilidad
+              Empresas líderes confían en nuestras soluciones de elevación y
+              movilidad
             </p>
           </div>
         </div>
@@ -88,7 +93,9 @@ export default function Clients() {
               Empresas que nos respaldan
             </h2>
             <p className="text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed">
-              Desde proyectos residenciales hasta complejos industriales, nuestros sistemas de elevación son la solución elegida por empresas líderes
+              Desde proyectos residenciales hasta complejos industriales,
+              nuestros sistemas de elevación son la solución elegida por
+              empresas líderes
             </p>
           </div>
 
@@ -97,10 +104,7 @@ export default function Clients() {
             {clients.map((client, index) => {
               const IconComponent = client.icon;
               return (
-                <div
-                  key={index}
-                  className="group relative h-full"
-                >
+                <div key={index} className="group relative h-full">
                   {/* Blur background on hover */}
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary via-primary/50 to-primary rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10" />
 

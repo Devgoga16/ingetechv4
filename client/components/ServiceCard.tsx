@@ -32,7 +32,10 @@ export function ServiceCard({ icon, title }: ServiceCardProps) {
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Shine effect on hover */}
-        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white to-transparent group-hover:translate-x-full" style={{animation: 'none'}} />
+        <div
+          className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white to-transparent group-hover:translate-x-full"
+          style={{ animation: "none" }}
+        />
       </div>
     </div>
   );
