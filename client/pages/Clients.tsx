@@ -64,7 +64,7 @@ export default function Clients() {
       <section
         className="relative py-20 md:py-28 px-4 sm:px-6 lg:px-8 text-white overflow-hidden"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg)',
+          backgroundImage: 'url(https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
