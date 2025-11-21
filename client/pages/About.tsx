@@ -13,8 +13,8 @@ export default function About() {
               Esta página está en desarrollo.
             </p>
             <p className="text-foreground/70">
-              Continúa explorando nuestro sitio o contáctanos para más información
-              sobre nuestra empresa.
+              Continúa explorando nuestro sitio o contáctanos para más
+              información sobre nuestra empresa.
             </p>
           </div>
         </div>

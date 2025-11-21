@@ -13,8 +13,8 @@ export default function Catalog() {
               Esta página está en desarrollo.
             </p>
             <p className="text-foreground/70">
-              Continúa explorando nuestro sitio o contáctanos para descargar nuestro
-              catálogo completo.
+              Continúa explorando nuestro sitio o contáctanos para descargar
+              nuestro catálogo completo.
             </p>
           </div>
         </div>

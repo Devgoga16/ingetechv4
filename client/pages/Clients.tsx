@@ -13,8 +13,8 @@ export default function Clients() {
               Esta página está en desarrollo.
             </p>
             <p className="text-foreground/70">
-              Continúa explorando nuestro sitio o contáctanos para conocer algunos de
-              nuestros clientes.
+              Continúa explorando nuestro sitio o contáctanos para conocer
+              algunos de nuestros clientes.
             </p>
           </div>
         </div>

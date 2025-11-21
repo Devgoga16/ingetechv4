@@ -129,10 +129,7 @@ OPTIMIZAMOS TUS ESPACIOS."
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             {services.map((service, index) => (
               <div key={index} className="relative">
-                <ServiceCard
-                  icon={service.icon}
-                  title={service.title}
-                />
+                <ServiceCard icon={service.icon} title={service.title} />
                 <div className="absolute top-0 left-0 right-0 h-1 bg-primary rounded-t-lg" />
               </div>
             ))}
@@ -195,13 +192,14 @@ OPTIMIZAMOS TUS ESPACIOS."
                 <p className="text-foreground/80 text-sm mb-4">
                   Empresa Peruana de Equipos Verticales Elevación y Equipos
                   Verticales, S.A.C. Somos especialistas en transporte vertical,
-                  ofreciendo equipos modernos, seguros y confortables que garantizan
-                  confiabilidad en cada proyecto
+                  ofreciendo equipos modernos, seguros y confortables que
+                  garantizan confiabilidad en cada proyecto
                 </p>
                 <p className="text-foreground/80 text-sm mb-6">
-                  Con amplia experiencia, nos enfocamos en la venta, instalación,
-                  modernización y mantenimiento de ascensores, montacargas, escaleras
-                  mecánicas, salva escaleras y monta vehículos.
+                  Con amplia experiencia, nos enfocamos en la venta,
+                  instalación, modernización y mantenimiento de ascensores,
+                  montacargas, escaleras mecánicas, salva escaleras y monta
+                  vehículos.
                 </p>
                 <button className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded font-bold text-sm w-fit transition-colors">
                   CONOCE MAS
@@ -229,8 +227,8 @@ OPTIMIZAMOS TUS ESPACIOS."
           </div>
           <div className="text-center bg-muted rounded-lg p-8 border-l-4 border-primary">
             <p className="text-primary font-bold text-sm mb-6 italic max-w-3xl mx-auto">
-              "TU SOCIO ESTRATEGICO PARA PROYECTOS QUE BUSCAN CALIDAD, INNOVACION Y
-              RESPALDO EN CADA ETAPA."
+              "TU SOCIO ESTRATEGICO PARA PROYECTOS QUE BUSCAN CALIDAD,
+              INNOVACION Y RESPALDO EN CADA ETAPA."
             </p>
             <button className="bg-primary hover:bg-primary/90 text-white px-8 py-2 rounded font-bold text-sm transition-colors">
               CUENTANOS TU PROYECTO

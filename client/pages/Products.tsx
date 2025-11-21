@@ -13,8 +13,8 @@ export default function Products() {
               Esta página está en desarrollo.
             </p>
             <p className="text-foreground/70">
-              Continúa explorando nuestro sitio o contáctanos para más información
-              sobre nuestros productos.
+              Continúa explorando nuestro sitio o contáctanos para más
+              información sobre nuestros productos.
             </p>
           </div>
         </div>

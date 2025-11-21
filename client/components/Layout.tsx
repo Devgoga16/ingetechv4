@@ -47,7 +47,9 @@ export function Layout({ children }: LayoutProps) {
       >
         <div
           className={`${
-            isSticky ? "px-4 sm:px-6 lg:px-8" : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+            isSticky
+              ? "px-4 sm:px-6 lg:px-8"
+              : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           }`}
         >
           {/* Top bar with contact info - Hidden when sticky */}
@@ -87,7 +89,9 @@ export function Layout({ children }: LayoutProps) {
                 isSticky ? "h-10" : "h-12"
               }`}
             >
-              <div className={`flex flex-col items-center justify-center transition-all duration-300 ${isSticky ? "scale-75" : ""}`}>
+              <div
+                className={`flex flex-col items-center justify-center transition-all duration-300 ${isSticky ? "scale-75" : ""}`}
+              >
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2F8c6701fbe7cf437c829a3713e11862cc%2F7602b26dad78482a93de24d014f77378?format=webp&width=800"
                   alt="INGETECH ASCENSORES"
@@ -159,9 +163,7 @@ export function Layout({ children }: LayoutProps) {
         </div>
 
         {/* Main content */}
-        <main className="flex-1">
-          {children}
-        </main>
+        <main className="flex-1">{children}</main>
       </div>
 
       {/* WhatsApp floating button */}
@@ -187,11 +189,15 @@ export function Layout({ children }: LayoutProps) {
               <div>
                 <p className="text-xs font-bold mb-2">UNE</p>
                 <p className="text-xs">Normalización Española</p>
-                <p className="text-xs mt-1">Para Posible Instalación y Seguridad del Usuario</p>
+                <p className="text-xs mt-1">
+                  Para Posible Instalación y Seguridad del Usuario
+                </p>
               </div>
               <div>
                 <p className="text-xs font-bold mb-2">DIRECTIVA 2006/42/CE</p>
-                <p className="text-xs">Para la Comercialización y Puesta en Servicio de Maquinarias</p>
+                <p className="text-xs">
+                  Para la Comercialización y Puesta en Servicio de Maquinarias
+                </p>
               </div>
               <div>
                 <p className="text-xs font-bold mb-2">ISO</p>
@@ -200,17 +206,23 @@ export function Layout({ children }: LayoutProps) {
               </div>
               <div>
                 <p className="text-xs font-bold mb-2">N.A.120</p>
-                <p className="text-xs">del Documento Nacional de Edificaciones (RNE)</p>
+                <p className="text-xs">
+                  del Documento Nacional de Edificaciones (RNE)
+                </p>
               </div>
               <div>
                 <p className="text-xs font-bold mb-2">UNE</p>
                 <p className="text-xs">Normalización Española 61891</p>
-                <p className="text-xs mt-1">Seguridad en Escaleras Mecánicas y Pasillo Móviles</p>
+                <p className="text-xs mt-1">
+                  Seguridad en Escaleras Mecánicas y Pasillo Móviles
+                </p>
               </div>
               <div>
                 <p className="text-xs font-bold mb-2">ISO 14881</p>
                 <p className="text-xs">Sistema de Gestión Ambiental</p>
-                <p className="text-xs mt-1">Transporte Mecanizado Número III a</p>
+                <p className="text-xs mt-1">
+                  Transporte Mecanizado Número III a
+                </p>
               </div>
             </div>
           </div>
@@ -226,9 +238,7 @@ export function Layout({ children }: LayoutProps) {
                   className="h-full w-full object-contain"
                 />
               </div>
-              <p className="text-xs text-white/80">
-                INGETECH ASCENSORES
-              </p>
+              <p className="text-xs text-white/80">INGETECH ASCENSORES</p>
             </div>
 
             {/* Services */}

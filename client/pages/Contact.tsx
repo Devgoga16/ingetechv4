@@ -37,7 +37,9 @@ export default function Contact() {
             </h2>
             <form className="space-y-4">
               <div>
-                <label className="block text-foreground font-bold mb-2">Nombre</label>
+                <label className="block text-foreground font-bold mb-2">
+                  Nombre
+                </label>
                 <input
                   type="text"
                   className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
@@ -45,7 +47,9 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label className="block text-foreground font-bold mb-2">Email</label>
+                <label className="block text-foreground font-bold mb-2">
+                  Email
+                </label>
                 <input
                   type="email"
                   className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
@@ -53,7 +57,9 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label className="block text-foreground font-bold mb-2">Mensaje</label>
+                <label className="block text-foreground font-bold mb-2">
+                  Mensaje
+                </label>
                 <textarea
                   rows={4}
                   className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"

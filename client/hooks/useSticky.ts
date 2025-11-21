@@ -14,7 +14,7 @@ export function useSticky() {
       },
       {
         threshold: 0,
-      }
+      },
     );
 
     observer.observe(element);
