@@ -10,12 +10,14 @@ import {
   Mail,
   MessageCircle,
 } from "lucide-react";
+import { useSticky } from "@/hooks/useSticky";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
 export function Layout({ children }: LayoutProps) {
+  const { elementRef, isSticky } = useSticky();
   const navItems = [
     { label: "INICIO", href: "/" },
     { label: "QUIENES SOMOS", href: "/about" },
