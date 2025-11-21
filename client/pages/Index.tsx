@@ -112,24 +112,13 @@ export default function Index() {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative h-[400px] md:h-[500px] bg-gradient-to-r from-foreground/80 to-foreground/60 overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=600&fit=crop"
-          alt="Elevadores"
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative h-full flex flex-col items-center justify-center text-white px-4 text-center">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl leading-tight">
-            ELEVAMOS TU COMODIDAD,<br />
-            OPTIMIZAMOS TUS ESPACIOS.
-          </h1>
-          <button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded font-bold text-sm transition-colors">
-            VER CATALOGO
-          </button>
-        </div>
-      </section>
+      {/* Hero Section with Carousel */}
+      <HeroCarousel
+        images={heroImages}
+        title="ELEVAMOS TU COMODIDAD,
+OPTIMIZAMOS TUS ESPACIOS."
+        buttonText="VER CATALOGO"
+      />
 
       {/* TE OFRECEMOS Section */}
       <section className="py-16 md:py-24 bg-white px-4 sm:px-6 lg:px-8 border-t-4 border-primary">
