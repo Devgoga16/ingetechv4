@@ -84,12 +84,12 @@ export default function Clients() {
             </div>
 
             {/* Main title */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight max-w-3xl drop-shadow-2xl" style={{textShadow: '0 4px 12px rgba(0,0,0,0.6)'}}>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight max-w-3xl drop-shadow-2xl" style={{textShadow: '0 4px 12px rgba(0,0,0,0.6)'}}>
               Empresas que confían en nosotros
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-white max-w-2xl leading-relaxed drop-shadow-lg" style={{textShadow: '0 3px 8px rgba(0,0,0,0.5)'}}>
+            <p className="text-base sm:text-lg md:text-xl text-white max-w-2xl leading-relaxed drop-shadow-lg" style={{textShadow: '0 3px 8px rgba(0,0,0,0.5)'}}>
               Desde proyectos residenciales hasta complejos industriales, nuestras soluciones de elevación y movilidad son elegidas por empresas líderes en toda la región.
             </p>
           </div>
