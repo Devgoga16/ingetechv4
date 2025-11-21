@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Facebook,
@@ -9,6 +9,7 @@ import {
   Phone,
   Mail,
   MessageCircle,
+  X,
 } from "lucide-react";
 import { useSticky } from "@/hooks/useSticky";
 
@@ -18,6 +19,7 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   const { elementRef, isSticky } = useSticky();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navItems = [
     { label: "INICIO", href: "/" },
     { label: "QUIENES SOMOS", href: "/about" },
