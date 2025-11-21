@@ -84,15 +84,15 @@ export function Layout({ children }: LayoutProps) {
             <Link
               to="/"
               className={`flex items-center gap-2 flex-shrink-0 transition-all duration-300 ${
-                isSticky ? "w-10 h-10" : "w-12 h-12"
+                isSticky ? "h-10" : "h-12"
               }`}
             >
-              <div
-                className={`${
-                  isSticky ? "w-10 h-10 text-sm" : "w-12 h-12 text-lg"
-                } bg-secondary text-white rounded flex items-center justify-center font-bold transition-all duration-300`}
-              >
-                EPJ
+              <div className={`flex flex-col items-center justify-center transition-all duration-300 ${isSticky ? "scale-75" : ""}`}>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F8c6701fbe7cf437c829a3713e11862cc%2Fccb889f3e488441f83c2209e88d69e4e?format=webp&width=200"
+                  alt="INGETECH ASCENSORES"
+                  className="h-12 w-auto object-contain"
+                />
               </div>
             </Link>
 
