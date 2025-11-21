@@ -5,7 +5,7 @@ export default function Products() {
     <Layout>
       <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-secondary mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-8">
             Productos
           </h1>
           <div className="bg-muted rounded-lg p-8 text-center">
