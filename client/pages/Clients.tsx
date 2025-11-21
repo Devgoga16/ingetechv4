@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import { LogosCarousel } from "@/components/LogosCarousel";
 import { Building2, Store, Zap, Home, Briefcase } from "lucide-react";
 
 export default function Clients() {
