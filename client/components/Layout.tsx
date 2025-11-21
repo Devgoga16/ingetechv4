@@ -140,8 +140,8 @@ export function Layout({ children }: LayoutProps) {
 
       {/* Main content with sidebar */}
       <div className="flex flex-1">
-        {/* Left sidebar with social icons */}
-        <div className="hidden md:flex flex-col items-center gap-4 bg-primary text-white px-4 py-8 fixed left-0 top-32">
+        {/* Left sidebar with social icons - Floating */}
+        <div className="hidden md:flex flex-col items-center gap-4 bg-primary text-white px-4 py-8 fixed left-6 top-1/2 -translate-y-1/2 rounded-lg shadow-lg z-30 animate-float">
           {socialLinks.map((social, index) => {
             const IconComponent = social.icon;
             return (
