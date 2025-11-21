@@ -12,7 +12,7 @@ export default function Clients() {
     {
       name: "Centro Comercial Metropolitano",
       category: "Comercial",
-      icon: ShoppingCenter,
+      icon: Store,
       description: "Centros de compras y espacios retail de gran envergadura",
     },
     {
