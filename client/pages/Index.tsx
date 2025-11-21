@@ -50,39 +50,45 @@ export default function Index() {
   const products = [
     {
       image:
-        "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=400&fit=crop",
+        "https://images.pexels.com/photos/16383996/pexels-photo-16383996.jpeg",
       title: "Ascensores Residenciales, Comerciales y de Oficinas",
-      description: "",
+      description:
+        "Sistemas modernos de elevación para espacios residenciales y comerciales",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1565733833556-8b6efb616050?w=400&h=400&fit=crop",
+        "https://images.pexels.com/photos/29224552/pexels-photo-29224552.jpeg",
       title: "Montacargas (Isolo Carga y Carga Acompañada)",
-      description: "",
+      description:
+        "Soluciones robustas para transporte de carga en almacenes e industria",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop",
+        "https://images.pexels.com/photos/3084315/pexels-photo-3084315.jpeg",
       title: "Escaleras, Rampas y Pasarelas Mecánicas",
-      description: "",
+      description:
+        "Movilidad segura y eficiente en espacios públicos y comerciales",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1503387762519-52582b1d6aa3?w=400&h=400&fit=crop",
+        "https://images.pexels.com/photos/1838112/pexels-photo-1838112.jpeg",
       title: "Salida Alturas y Salva Escaleras",
-      description: "",
+      description:
+        "Accesibilidad y seguridad para personas con movilidad reducida",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1485579149c01123123?w=400&h=400&fit=crop",
+        "https://images.pexels.com/photos/1849115/pexels-photo-1849115.jpeg",
       title: "Monta Vehículos Hidráulicos",
-      description: "",
+      description:
+        "Sistemas de elevación para estacionamientos y talleres automotrices",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1544716278-ca5e3af3abd8?w=400&h=400&fit=crop",
+        "https://images.pexels.com/photos/17323801/pexels-photo-17323801.jpeg",
       title: "Salas Técnicas",
-      description: "",
+      description:
+        "Espacios diseñados para control y monitoreo de sistemas de elevación",
     },
   ];
 
@@ -121,32 +127,77 @@ OPTIMIZAMOS TUS ESPACIOS."
       />
 
       {/* TE OFRECEMOS Section */}
-      <section className="py-16 md:py-24 bg-white px-4 sm:px-6 lg:px-8 border-t-4 border-primary">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-center text-2xl md:text-3xl font-bold text-primary mb-12">
-            TE OFRECEMOS
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <section className="relative py-24 md:py-40 bg-gradient-to-b from-slate-50 via-white to-slate-50 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <div className="inline-block mb-6">
+              <span className="text-primary font-bold text-sm tracking-widest uppercase">
+                Nuestras soluciones
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Te Ofrecemos
+            </h2>
+            <p className="text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed">
+              Servicios innovadores y de clase mundial diseñados para maximizar
+              tu comodidad y optimizar tus espacios
+            </p>
+            <div className="flex items-center justify-center gap-2 mt-8">
+              <div className="w-12 h-1 bg-gradient-to-r from-transparent to-primary" />
+              <div className="w-2 h-2 rounded-full bg-primary" />
+              <div className="w-12 h-1 bg-gradient-to-l from-transparent to-primary" />
+            </div>
+          </div>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="relative">
-                <ServiceCard icon={service.icon} title={service.title} />
-                <div className="absolute top-0 left-0 right-0 h-1 bg-primary rounded-t-lg" />
-              </div>
+              <ServiceCard
+                key={index}
+                icon={service.icon}
+                title={service.title}
+              />
             ))}
           </div>
         </div>
       </section>
 
       {/* NUESTROS PRODUCTOS Section */}
-      <section className="py-16 md:py-24 bg-muted px-4 sm:px-6 lg:px-8 border-t-4 border-primary">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-center text-2xl md:text-3xl font-bold text-primary mb-3">
-            NUESTROS PRODUCTOS
-          </h2>
-          <p className="text-center text-foreground/70 mb-12 max-w-2xl mx-auto">
-            Donde la excelencia y la funcionalidad se encuentran en cada nivel.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="relative py-24 md:py-40 bg-gradient-to-b from-white via-slate-50 to-white px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute top-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <div className="inline-block mb-6">
+              <span className="text-primary font-bold text-sm tracking-widest uppercase">
+                Catálogo de soluciones
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Nuestros Productos
+            </h2>
+            <p className="text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+              Donde la excelencia y la funcionalidad se encuentran en cada
+              nivel. Descubre nuestro amplio catálogo de sistemas de elevación y
+              movilidad.
+            </p>
+            <div className="flex items-center justify-center gap-2 mt-8">
+              <div className="w-12 h-1 bg-gradient-to-r from-transparent to-primary" />
+              <div className="w-2 h-2 rounded-full bg-primary" />
+              <div className="w-12 h-1 bg-gradient-to-l from-transparent to-primary" />
+            </div>
+          </div>
+
+          {/* Products Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => (
               <ProductCard
                 key={index}
