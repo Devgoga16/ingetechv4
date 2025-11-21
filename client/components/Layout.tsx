@@ -79,20 +79,20 @@ export function Layout({ children }: LayoutProps) {
               </div>
             )}
 
-            {/* Main header with logo */}
+            {/* Main header with logo and nav */}
             <div
               className={`flex justify-between items-center ${
-                isSticky ? "py-3" : "py-4"
+                isSticky ? "py-2" : "py-4"
               }`}
             >
               <Link
                 to="/"
                 className={`flex items-center gap-2 flex-shrink-0 transition-all duration-300 ${
-                  isSticky ? "h-10" : "h-12"
+                  isSticky ? "h-8" : "h-12"
                 }`}
               >
                 <div
-                  className={`flex flex-col items-center justify-center transition-all duration-300 ${isSticky ? "scale-75" : ""}`}
+                  className={`flex flex-col items-center justify-center transition-all duration-300 ${isSticky ? "scale-60" : ""}`}
                 >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2F8c6701fbe7cf437c829a3713e11862cc%2F7602b26dad78482a93de24d014f77378?format=webp&width=800"
@@ -101,6 +101,21 @@ export function Layout({ children }: LayoutProps) {
                   />
                 </div>
               </Link>
+
+              {/* Navigation in header when sticky */}
+              {isSticky && (
+                <nav className="hidden lg:flex items-center gap-6">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      className="font-semibold text-foreground hover:text-primary transition-all duration-300 text-xs"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+              )}
             </div>
           </div>
         </header>
