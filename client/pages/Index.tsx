@@ -2,6 +2,7 @@ import { Layout } from "@/components/Layout";
 import { ServiceCard } from "@/components/ServiceCard";
 import { ProductCard } from "@/components/ProductCard";
 import { FeatureCard } from "@/components/FeatureCard";
+import { HeroCarousel } from "@/components/HeroCarousel";
 import {
   Building2,
   Wrench,
