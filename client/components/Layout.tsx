@@ -159,7 +159,7 @@ export function Layout({ children }: LayoutProps) {
         </div>
 
         {/* Main content */}
-        <main className="flex-1 md:ml-20">
+        <main className="flex-1">
           {children}
         </main>
       </div>
