@@ -121,17 +121,20 @@ OPTIMIZAMOS TUS ESPACIOS."
       />
 
       {/* TE OFRECEMOS Section */}
-      <section className="py-16 md:py-24 bg-white px-4 sm:px-6 lg:px-8 border-t-4 border-primary">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-center text-2xl md:text-3xl font-bold text-primary mb-12">
-            TE OFRECEMOS
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <section className="py-20 md:py-32 bg-gradient-to-b from-white to-muted/20 px-4 sm:px-6 lg:px-8 border-t-4 border-primary">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-center text-3xl md:text-4xl font-bold text-foreground mb-4">
+              TE OFRECEMOS
+            </h2>
+            <p className="text-foreground/60 text-lg max-w-2xl mx-auto">
+              Soluciones innovadoras y confiables para cada necesidad
+            </p>
+            <div className="w-16 h-1 bg-gradient-to-r from-primary via-primary to-transparent mx-auto mt-6" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {services.map((service, index) => (
-              <div key={index} className="relative">
-                <ServiceCard icon={service.icon} title={service.title} />
-                <div className="absolute top-0 left-0 right-0 h-1 bg-primary rounded-t-lg" />
-              </div>
+              <ServiceCard key={index} icon={service.icon} title={service.title} />
             ))}
           </div>
         </div>
@@ -210,7 +213,7 @@ OPTIMIZAMOS TUS ESPACIOS."
         </div>
       </section>
 
-      {/* ¿POR QUE ELEGIRNOS? Section */}
+      {/* ��POR QUE ELEGIRNOS? Section */}
       <section className="py-16 md:py-24 bg-white px-4 sm:px-6 lg:px-8 border-t-4 border-primary">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-center text-2xl md:text-3xl font-bold text-primary mb-12">
