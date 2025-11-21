@@ -185,6 +185,24 @@ export function Layout({ children }: LayoutProps) {
                   )}
                 </button>
               </div>
+
+              {/* Mobile menu dropdown */}
+              {mobileMenuOpen && (
+                <div className="lg:hidden bg-primary border-t border-white/20 max-h-96 overflow-y-auto">
+                  <div className="flex flex-col">
+                    {navItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="nav-link-white font-semibold text-white text-sm px-4 sm:px-6 lg:px-8 py-3 border-b border-white/10 hover:bg-primary/80 transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </nav>
         )}
