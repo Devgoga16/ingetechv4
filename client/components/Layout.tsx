@@ -73,7 +73,7 @@ export function Layout({ children }: LayoutProps) {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className="text-sm font-semibold text-foreground hover:text-primary transition-colors"
+                  className="text-sm font-semibold text-foreground hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1"
                 >
                   {item.label}
                 </Link>
@@ -103,7 +103,7 @@ export function Layout({ children }: LayoutProps) {
       {/* Main content with sidebar */}
       <div className="flex flex-1">
         {/* Left sidebar with social icons */}
-        <div className="hidden md:flex flex-col items-center gap-4 bg-secondary text-white px-4 py-8 fixed left-0 top-32">
+        <div className="hidden md:flex flex-col items-center gap-4 bg-primary text-white px-4 py-8 fixed left-0 top-32">
           {socialLinks.map((social, index) => {
             const IconComponent = social.icon;
             return (
@@ -112,7 +112,7 @@ export function Layout({ children }: LayoutProps) {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded bg-white/20 hover:bg-white/40 flex items-center justify-center transition-colors"
               >
                 <IconComponent size={20} />
               </a>
@@ -138,7 +138,7 @@ export function Layout({ children }: LayoutProps) {
       </a>
 
       {/* Footer */}
-      <footer className="bg-secondary text-white mt-12">
+      <footer className="bg-foreground text-white mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Certifications section */}
           <div className="mb-12 border-b border-white/20 pb-8">
