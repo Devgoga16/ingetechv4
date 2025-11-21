@@ -105,39 +105,52 @@ export default function Clients() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary via-primary/50 to-primary rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10" />
 
                   {/* Card */}
-                  <div className="relative h-full flex flex-col p-8 rounded-2xl bg-white border border-muted/30 group-hover:border-primary/50 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
-                    {/* Top accent */}
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primary/70 to-transparent rounded-t-2xl" />
+                  <div className="relative h-full flex flex-col overflow-hidden rounded-2xl bg-white border border-muted/30 group-hover:border-primary/50 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
+                    {/* Image background */}
+                    <div className="relative h-40 overflow-hidden bg-muted">
+                      <img
+                        src={client.image}
+                        alt={client.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      {/* Overlay gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40" />
 
-                    {/* Icon */}
-                    <div className="mb-6">
-                      <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-500">
-                        <IconComponent className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-500" />
+                      {/* Logo circle - Top right */}
+                      <div className="absolute top-3 right-3 w-20 h-20 rounded-full bg-white border-4 border-primary shadow-lg overflow-hidden flex items-center justify-center">
+                        <img
+                          src={client.logo}
+                          alt={`${client.name} logo`}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </div>
 
-                    {/* Category badge */}
-                    <div className="mb-4">
-                      <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold text-primary bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
-                        {client.category}
-                      </span>
-                    </div>
-
                     {/* Content */}
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300 leading-snug">
-                        {client.name}
-                      </h3>
-                      <p className="text-sm text-foreground/70 group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                        {client.description}
-                      </p>
-                    </div>
+                    <div className="flex-1 p-6 flex flex-col">
+                      {/* Category badge */}
+                      <div className="mb-3">
+                        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold text-primary bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                          {client.category}
+                        </span>
+                      </div>
 
-                    {/* Bottom accent */}
-                    <div className="mt-6 pt-6 border-t border-muted/20 group-hover:border-primary/30 transition-colors duration-300">
-                      <p className="text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        Asociado estratégico ↗
-                      </p>
+                      {/* Title and description */}
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300 leading-snug">
+                          {client.name}
+                        </h3>
+                        <p className="text-sm text-foreground/70 group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
+                          {client.description}
+                        </p>
+                      </div>
+
+                      {/* Bottom accent */}
+                      <div className="mt-4 pt-4 border-t border-muted/20 group-hover:border-primary/30 transition-colors duration-300">
+                        <p className="text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          Asociado estratégico ↗
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
