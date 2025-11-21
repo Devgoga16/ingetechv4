@@ -70,27 +70,25 @@ export default function Clients() {
         }}
       >
         {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70 -z-10" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10" />
-        <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-primary/10 rounded-full blur-3xl -z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/75 to-black/60 -z-10" />
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col items-start">
             {/* Decorative line and label */}
             <div className="flex items-center gap-3 mb-8">
               <div className="h-1 w-12 bg-gradient-to-r from-primary to-primary/40 rounded-full" />
-              <span className="text-sm font-semibold tracking-widest uppercase text-primary/80">
+              <span className="text-sm font-semibold tracking-widest uppercase text-primary drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.5)'}}>
                 Nuestros Asociados
               </span>
             </div>
 
             {/* Main title */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight max-w-3xl">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight max-w-3xl drop-shadow-2xl" style={{textShadow: '0 4px 12px rgba(0,0,0,0.6)'}}>
               Empresas que confían en nosotros
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-xl text-white max-w-2xl leading-relaxed drop-shadow-lg" style={{textShadow: '0 3px 8px rgba(0,0,0,0.5)'}}>
               Desde proyectos residenciales hasta complejos industriales, nuestras soluciones de elevación y movilidad son elegidas por empresas líderes en toda la región.
             </p>
           </div>
