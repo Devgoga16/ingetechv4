@@ -100,24 +100,6 @@ export function Layout({ children }: LayoutProps) {
               </div>
             </Link>
 
-            {/* Navigation - Centered in sticky mode */}
-            <nav
-              className={`hidden lg:flex items-center gap-4 transition-all duration-300 ${
-                isSticky ? "gap-4" : "gap-8"
-              }`}
-            >
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  to={item.href}
-                  className={`font-semibold text-foreground hover:text-primary transition-all duration-300 border-b-2 border-transparent hover:border-primary pb-1 ${
-                    isSticky ? "text-xs" : "text-sm"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
 
             {/* Mobile menu button */}
             <button className="lg:hidden text-foreground">
