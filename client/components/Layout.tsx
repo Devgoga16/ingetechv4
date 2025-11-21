@@ -130,7 +130,7 @@ export function Layout({ children }: LayoutProps) {
                     <Link
                       key={item.href}
                       to={item.href}
-                      className="font-semibold text-foreground hover:text-primary transition-all duration-300 text-xs"
+                      className="nav-link font-semibold text-foreground hover:text-primary text-xs"
                     >
                       {item.label}
                     </Link>
