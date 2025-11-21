@@ -37,7 +37,12 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Header */}
-      <header className="relative z-40 bg-white border-b border-primary/10">
+      <header
+        ref={elementRef}
+        className={`z-40 bg-white border-b border-primary/10 transition-all duration-300 ${
+          isSticky ? "fixed top-0 left-0 right-0 shadow-md w-full" : "relative"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Top bar with contact info */}
           <div className="hidden md:flex justify-between items-center py-2 text-xs text-foreground/70 border-b border-muted">
