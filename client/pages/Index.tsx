@@ -80,9 +80,9 @@ export default function Index() {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1544716278-ca5e3af3abd8?w=400&h=400&fit=crop",
+        "https://images.pexels.com/photos/17323801/pexels-photo-17323801.jpeg",
       title: "Salas Técnicas",
-      description: "",
+      description: "Espacios diseñados para control y monitoreo de sistemas de elevación",
     },
   ];
 
