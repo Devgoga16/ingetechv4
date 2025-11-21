@@ -36,51 +36,79 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
+      {/* Sentinel element for sticky detection */}
+      <div ref={elementRef} className="h-0" />
+
       {/* Header */}
       <header
-        ref={elementRef}
         className={`z-40 bg-white border-b border-primary/10 transition-all duration-300 ${
-          isSticky ? "fixed top-0 left-0 right-0 shadow-md w-full" : "relative"
+          isSticky ? "fixed top-0 left-0 right-0 shadow-lg" : "relative"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Top bar with contact info */}
-          <div className="hidden md:flex justify-between items-center py-2 text-xs text-foreground/70 border-b border-muted">
-            <div className="flex gap-6">
-              <div className="flex items-center gap-2">
-                <MapPin size={14} />
-                <span>
-                  Ubicación: Av. Prolongación Benavides 3583, Oficina 101,
-                  Santiago de Surco, Lima
-                </span>
+        <div
+          className={`${
+            isSticky ? "px-4 sm:px-6 lg:px-8" : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          }`}
+        >
+          {/* Top bar with contact info - Hidden when sticky */}
+          {!isSticky && (
+            <div className="hidden md:flex justify-between items-center py-2 text-xs text-foreground/70 border-b border-muted">
+              <div className="flex gap-6">
+                <div className="flex items-center gap-2">
+                  <MapPin size={14} />
+                  <span>
+                    Ubicación: Av. Prolongación Benavides 3583, Oficina 101,
+                    Santiago de Surco, Lima
+                  </span>
+                </div>
+              </div>
+              <div className="flex gap-6">
+                <div className="flex items-center gap-2">
+                  <Phone size={14} />
+                  <span>Llamanos: +51 981 311 694</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail size={14} />
+                  <span>tesoreria@epj.com.pe</span>
+                </div>
               </div>
             </div>
-            <div className="flex gap-6">
-              <div className="flex items-center gap-2">
-                <Phone size={14} />
-                <span>Llamanos: +51 981 311 694</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail size={14} />
-                <span>tesoreria@epj.com.pe</span>
-              </div>
-            </div>
-          </div>
+          )}
 
           {/* Main header with logo and nav */}
-          <div className="flex justify-between items-center py-4">
-            <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-              <div className="w-12 h-12 bg-secondary text-white rounded flex items-center justify-center font-bold text-lg">
+          <div
+            className={`flex justify-between items-center ${
+              isSticky ? "py-3" : "py-4"
+            }`}
+          >
+            <Link
+              to="/"
+              className={`flex items-center gap-2 flex-shrink-0 transition-all duration-300 ${
+                isSticky ? "w-10 h-10" : "w-12 h-12"
+              }`}
+            >
+              <div
+                className={`${
+                  isSticky ? "w-10 h-10 text-sm" : "w-12 h-12 text-lg"
+                } bg-secondary text-white rounded flex items-center justify-center font-bold transition-all duration-300`}
+              >
                 EPJ
               </div>
             </Link>
 
-            <nav className="hidden lg:flex items-center gap-8">
+            {/* Navigation - Centered in sticky mode */}
+            <nav
+              className={`hidden lg:flex items-center gap-4 transition-all duration-300 ${
+                isSticky ? "gap-4" : "gap-8"
+              }`}
+            >
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   to={item.href}
-                  className="text-sm font-semibold text-foreground hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1"
+                  className={`font-semibold text-foreground hover:text-primary transition-all duration-300 border-b-2 border-transparent hover:border-primary pb-1 ${
+                    isSticky ? "text-xs" : "text-sm"
+                  }`}
                 >
                   {item.label}
                 </Link>
@@ -108,7 +136,7 @@ export function Layout({ children }: LayoutProps) {
       </header>
 
       {/* Spacer when header is sticky */}
-      {isSticky && <div className="h-32 md:h-24" />}
+      {isSticky && <div className="h-20" />}
 
       {/* Main content with sidebar */}
       <div className="flex flex-1">
