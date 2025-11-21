@@ -155,15 +155,32 @@ OPTIMIZAMOS TUS ESPACIOS."
       </section>
 
       {/* NUESTROS PRODUCTOS Section */}
-      <section className="py-16 md:py-24 bg-muted px-4 sm:px-6 lg:px-8 border-t-4 border-primary">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-center text-2xl md:text-3xl font-bold text-primary mb-3">
-            NUESTROS PRODUCTOS
-          </h2>
-          <p className="text-center text-foreground/70 mb-12 max-w-2xl mx-auto">
-            Donde la excelencia y la funcionalidad se encuentran en cada nivel.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="relative py-24 md:py-40 bg-gradient-to-b from-white via-slate-50 to-white px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute top-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <div className="inline-block mb-6">
+              <span className="text-primary font-bold text-sm tracking-widest uppercase">Catálogo de soluciones</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Nuestros Productos
+            </h2>
+            <p className="text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+              Donde la excelencia y la funcionalidad se encuentran en cada nivel. Descubre nuestro amplio catálogo de sistemas de elevación y movilidad.
+            </p>
+            <div className="flex items-center justify-center gap-2 mt-8">
+              <div className="w-12 h-1 bg-gradient-to-r from-transparent to-primary" />
+              <div className="w-2 h-2 rounded-full bg-primary" />
+              <div className="w-12 h-1 bg-gradient-to-l from-transparent to-primary" />
+            </div>
+          </div>
+
+          {/* Products Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => (
               <ProductCard
                 key={index}
