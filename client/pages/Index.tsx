@@ -121,18 +121,32 @@ OPTIMIZAMOS TUS ESPACIOS."
       />
 
       {/* TE OFRECEMOS Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-white to-muted/20 px-4 sm:px-6 lg:px-8 border-t-4 border-primary">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-center text-3xl md:text-4xl font-bold text-foreground mb-4">
-              TE OFRECEMOS
+      <section className="relative py-24 md:py-40 bg-gradient-to-b from-slate-50 via-white to-slate-50 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <div className="inline-block mb-6">
+              <span className="text-primary font-bold text-sm tracking-widest uppercase">Nuestras soluciones</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Te Ofrecemos
             </h2>
-            <p className="text-foreground/60 text-lg max-w-2xl mx-auto">
-              Soluciones innovadoras y confiables para cada necesidad
+            <p className="text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed">
+              Servicios innovadores y de clase mundial diseñados para maximizar tu comodidad y optimizar tus espacios
             </p>
-            <div className="w-16 h-1 bg-gradient-to-r from-primary via-primary to-transparent mx-auto mt-6" />
+            <div className="flex items-center justify-center gap-2 mt-8">
+              <div className="w-12 h-1 bg-gradient-to-r from-transparent to-primary" />
+              <div className="w-2 h-2 rounded-full bg-primary" />
+              <div className="w-12 h-1 bg-gradient-to-l from-transparent to-primary" />
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {services.map((service, index) => (
               <ServiceCard key={index} icon={service.icon} title={service.title} />
             ))}
@@ -213,7 +227,7 @@ OPTIMIZAMOS TUS ESPACIOS."
         </div>
       </section>
 
-      {/* ��POR QUE ELEGIRNOS? Section */}
+      {/* ¿POR QUE ELEGIRNOS? Section */}
       <section className="py-16 md:py-24 bg-white px-4 sm:px-6 lg:px-8 border-t-4 border-primary">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-center text-2xl md:text-3xl font-bold text-primary mb-12">
