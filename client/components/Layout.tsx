@@ -121,8 +121,43 @@ export function Layout({ children }: LayoutProps) {
         </div>
       </header>
 
+      {/* Red Navigation Bar */}
+      <nav className={`bg-primary text-white transition-all duration-300 ${isSticky ? "fixed top-20 left-0 right-0 z-40" : "relative"}`}>
+        <div className={`${isSticky ? "px-4 sm:px-6 lg:px-8" : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"}`}>
+          <div className="hidden lg:flex items-center justify-center gap-8 py-4">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                to={item.href}
+                className="font-semibold text-white hover:text-white/80 transition-all duration-300 text-sm"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+          {/* Mobile menu button placeholder */}
+          <div className="lg:hidden flex items-center justify-between py-4">
+            <button className="text-white">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+
       {/* Spacer when header is sticky */}
-      {isSticky && <div className="h-20" />}
+      {isSticky && <div className="h-32" />}
 
       {/* Main content with sidebar */}
       <div className="flex flex-1">
