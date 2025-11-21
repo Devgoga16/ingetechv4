@@ -62,7 +62,7 @@ export default function Clients() {
     <Layout>
       {/* Hero Section */}
       <section
-        className="relative py-20 md:py-28 px-4 sm:px-6 lg:px-8 text-white overflow-hidden"
+        className="relative py-12 sm:py-16 md:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 text-white overflow-hidden"
         style={{
           backgroundImage: 'url(https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg)',
           backgroundSize: 'cover',
