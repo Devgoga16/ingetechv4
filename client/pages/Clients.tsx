@@ -76,9 +76,9 @@ export default function Clients() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col items-start">
             {/* Decorative line and label */}
-            <div className="flex items-center gap-3 mb-8">
-              <div className="h-1 w-12 bg-gradient-to-r from-primary to-primary/40 rounded-full" />
-              <span className="text-sm font-semibold tracking-widest uppercase text-primary drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.5)'}}>
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 md:mb-8">
+              <div className="h-1 w-10 sm:w-12 bg-gradient-to-r from-primary to-primary/40 rounded-full" />
+              <span className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-primary drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.5)'}}>
                 Nuestros Asociados
               </span>
             </div>
