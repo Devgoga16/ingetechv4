@@ -96,6 +96,9 @@ export default function Clients() {
         </div>
       </section>
 
+      {/* Logos Carousel */}
+      <LogosCarousel />
+
       {/* Main Clients Section */}
       <section className="relative py-24 md:py-40 bg-gradient-to-b from-white via-slate-50 to-white px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background decorations */}
