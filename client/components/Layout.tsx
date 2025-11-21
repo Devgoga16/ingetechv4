@@ -89,7 +89,7 @@ export function Layout({ children }: LayoutProps) {
             >
               <div className={`flex flex-col items-center justify-center transition-all duration-300 ${isSticky ? "scale-75" : ""}`}>
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F8c6701fbe7cf437c829a3713e11862cc%2Fccb889f3e488441f83c2209e88d69e4e?format=webp&width=200"
+                  src="https://cdn.builder.io/api/v1/image/assets%2F8c6701fbe7cf437c829a3713e11862cc%2F7602b26dad78482a93de24d014f77378?format=webp&width=800"
                   alt="INGETECH ASCENSORES"
                   className="h-12 w-auto object-contain"
                 />
