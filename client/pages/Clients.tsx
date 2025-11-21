@@ -60,9 +60,9 @@ export default function Clients() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-b from-secondary via-secondary to-secondary/95 px-4 sm:px-6 lg:px-8 text-white overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -z-10" />
-        <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-primary/10 rounded-full blur-3xl -z-10" />
+      <section className="relative py-20 md:py-28 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 px-4 sm:px-6 lg:px-8 text-white overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl -z-10" />
+        <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-cyan-400/5 rounded-full blur-3xl -z-10" />
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col items-start">
