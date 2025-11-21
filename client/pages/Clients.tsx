@@ -60,18 +60,28 @@ export default function Clients() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-r from-secondary to-secondary/80 px-4 sm:px-6 lg:px-8 text-white overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -z-10" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -z-10" />
+      <section className="relative py-20 md:py-28 bg-gradient-to-b from-secondary via-secondary to-secondary/95 px-4 sm:px-6 lg:px-8 text-white overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -z-10" />
+        <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-primary/10 rounded-full blur-3xl -z-10" />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Nuestros Clientes
+          <div className="flex flex-col items-start">
+            {/* Decorative line and label */}
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-1 w-12 bg-gradient-to-r from-primary to-primary/40 rounded-full" />
+              <span className="text-sm font-semibold tracking-widest uppercase text-primary/80">
+                Nuestros Asociados
+              </span>
+            </div>
+
+            {/* Main title */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight max-w-3xl">
+              Empresas que confían en nosotros
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Empresas líderes confían en nuestras soluciones de elevación y
-              movilidad
+
+            {/* Subtitle */}
+            <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
+              Desde proyectos residenciales hasta complejos industriales, nuestras soluciones de elevación y movilidad son elegidas por empresas líderes en toda la región.
             </p>
           </div>
         </div>
