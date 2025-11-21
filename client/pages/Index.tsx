@@ -18,6 +18,12 @@ import {
 } from "lucide-react";
 
 export default function Index() {
+  const heroImages = [
+    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1565733833556-8b6efb616050?w=1200&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop",
+  ];
+
   const services = [
     {
       icon: <Building2 size={48} />,
