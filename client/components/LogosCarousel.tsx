@@ -7,8 +7,7 @@ export function LogosCarousel() {
     },
     {
       name: "Centro Comercial",
-      image:
-        "https://images.pexels.com/photos/291539/pexels-photo-291539.jpeg",
+      image: "https://images.pexels.com/photos/291539/pexels-photo-291539.jpeg",
     },
     {
       name: "Torre Financiera",

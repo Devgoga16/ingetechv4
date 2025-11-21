@@ -64,10 +64,11 @@ export default function Clients() {
       <section
         className="relative py-12 sm:py-16 md:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 text-white overflow-hidden"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
+          backgroundImage:
+            "url(https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
         }}
       >
         {/* Dark overlay for readability */}
@@ -78,19 +79,30 @@ export default function Clients() {
             {/* Decorative line and label */}
             <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 md:mb-8">
               <div className="h-1 w-10 sm:w-12 bg-gradient-to-r from-primary to-primary/40 rounded-full" />
-              <span className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-primary drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.5)'}}>
+              <span
+                className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-primary drop-shadow-lg"
+                style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
+              >
                 Nuestros Asociados
               </span>
             </div>
 
             {/* Main title */}
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight max-w-3xl drop-shadow-2xl" style={{textShadow: '0 4px 12px rgba(0,0,0,0.6)'}}>
+            <h1
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight max-w-3xl drop-shadow-2xl"
+              style={{ textShadow: "0 4px 12px rgba(0,0,0,0.6)" }}
+            >
               Empresas que confían en nosotros
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg md:text-xl text-white max-w-2xl leading-relaxed drop-shadow-lg" style={{textShadow: '0 3px 8px rgba(0,0,0,0.5)'}}>
-              Desde proyectos residenciales hasta complejos industriales, nuestras soluciones de elevación y movilidad son elegidas por empresas líderes en toda la región.
+            <p
+              className="text-base sm:text-lg md:text-xl text-white max-w-2xl leading-relaxed drop-shadow-lg"
+              style={{ textShadow: "0 3px 8px rgba(0,0,0,0.5)" }}
+            >
+              Desde proyectos residenciales hasta complejos industriales,
+              nuestras soluciones de elevación y movilidad son elegidas por
+              empresas líderes en toda la región.
             </p>
           </div>
         </div>
