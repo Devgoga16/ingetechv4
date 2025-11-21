@@ -39,109 +39,116 @@ export function Layout({ children }: LayoutProps) {
       {/* Sentinel element for sticky detection */}
       <div ref={elementRef} className="h-0" />
 
-      {/* Header */}
-      <header
-        className={`z-40 bg-white border-b border-primary/10 transition-all duration-300 ${
-          isSticky ? "fixed top-0 left-0 right-0 shadow-lg" : "relative"
+      {/* Header and Navigation - Sticky Container */}
+      <div
+        className={`transition-all duration-300 ${
+          isSticky ? "fixed top-0 left-0 right-0 z-40 shadow-lg" : "relative"
         }`}
       >
-        <div
-          className={`${
-            isSticky
-              ? "px-4 sm:px-6 lg:px-8"
-              : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-          }`}
-        >
-          {/* Top bar with contact info - Hidden when sticky */}
-          {!isSticky && (
-            <div className="hidden md:flex justify-between items-center py-2 text-xs text-foreground/70 border-b border-muted">
-              <div className="flex gap-6">
-                <div className="flex items-center gap-2">
-                  <MapPin size={14} />
-                  <span>
-                    Ubicación: Av. Prolongación Benavides 3583, Oficina 101,
-                    Santiago de Surco, Lima
-                  </span>
-                </div>
-              </div>
-              <div className="flex gap-6">
-                <div className="flex items-center gap-2">
-                  <Phone size={14} />
-                  <span>Llamanos: +51 981 311 694</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail size={14} />
-                  <span>tesoreria@epj.com.pe</span>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Main header with logo and nav */}
+        {/* Header */}
+        <header className="bg-white border-b border-primary/10">
           <div
-            className={`flex justify-between items-center ${
-              isSticky ? "py-3" : "py-4"
+            className={`${
+              isSticky
+                ? "px-4 sm:px-6 lg:px-8"
+                : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
             }`}
           >
-            <Link
-              to="/"
-              className={`flex items-center gap-2 flex-shrink-0 transition-all duration-300 ${
-                isSticky ? "h-10" : "h-12"
+            {/* Top bar with contact info - Hidden when sticky */}
+            {!isSticky && (
+              <div className="hidden md:flex justify-between items-center py-2 text-xs text-foreground/70 border-b border-muted">
+                <div className="flex gap-6">
+                  <div className="flex items-center gap-2">
+                    <MapPin size={14} />
+                    <span>
+                      Ubicación: Av. Prolongación Benavides 3583, Oficina 101,
+                      Santiago de Surco, Lima
+                    </span>
+                  </div>
+                </div>
+                <div className="flex gap-6">
+                  <div className="flex items-center gap-2">
+                    <Phone size={14} />
+                    <span>Llamanos: +51 981 311 694</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Mail size={14} />
+                    <span>tesoreria@epj.com.pe</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Main header with logo */}
+            <div
+              className={`flex justify-between items-center ${
+                isSticky ? "py-3" : "py-4"
               }`}
             >
-              <div
-                className={`flex flex-col items-center justify-center transition-all duration-300 ${isSticky ? "scale-75" : ""}`}
-              >
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F8c6701fbe7cf437c829a3713e11862cc%2F7602b26dad78482a93de24d014f77378?format=webp&width=800"
-                  alt="INGETECH ASCENSORES"
-                  className="h-12 w-auto object-contain"
-                />
-              </div>
-            </Link>
-
-
-          </div>
-        </div>
-      </header>
-
-      {/* Red Navigation Bar */}
-      <nav className={`bg-primary text-white transition-all duration-300 ${isSticky ? "fixed top-20 left-0 right-0 z-40" : "relative"}`}>
-        <div className={`${isSticky ? "px-4 sm:px-6 lg:px-8" : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"}`}>
-          <div className="hidden lg:flex items-center justify-center gap-8 py-4">
-            {navItems.map((item) => (
               <Link
-                key={item.href}
-                to={item.href}
-                className="font-semibold text-white hover:text-white/80 transition-all duration-300 text-sm"
+                to="/"
+                className={`flex items-center gap-2 flex-shrink-0 transition-all duration-300 ${
+                  isSticky ? "h-10" : "h-12"
+                }`}
               >
-                {item.label}
+                <div
+                  className={`flex flex-col items-center justify-center transition-all duration-300 ${isSticky ? "scale-75" : ""}`}
+                >
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F8c6701fbe7cf437c829a3713e11862cc%2F7602b26dad78482a93de24d014f77378?format=webp&width=800"
+                    alt="INGETECH ASCENSORES"
+                    className="h-12 w-auto object-contain"
+                  />
+                </div>
               </Link>
-            ))}
+            </div>
           </div>
-          {/* Mobile menu button placeholder */}
-          <div className="lg:hidden flex items-center justify-between py-4">
-            <button className="text-white">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
+        </header>
+
+        {/* Red Navigation Bar */}
+        <nav className="bg-primary text-white">
+          <div
+            className={`${
+              isSticky
+                ? "px-4 sm:px-6 lg:px-8"
+                : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+            }`}
+          >
+            <div className="hidden lg:flex items-center justify-center gap-8 py-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="font-semibold text-white hover:text-white/80 transition-all duration-300 text-sm"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            {/* Mobile menu button placeholder */}
+            <div className="lg:hidden flex items-center justify-between py-4">
+              <button className="text-white">
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
 
       {/* Spacer when header is sticky */}
-      {isSticky && <div className="h-32" />}
+      {isSticky && <div className="h-28" />}
 
       {/* Main content with sidebar */}
       <div className="flex flex-1">
