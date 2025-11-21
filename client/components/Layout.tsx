@@ -219,11 +219,15 @@ export function Layout({ children }: LayoutProps) {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Logo */}
             <div>
-              <div className="w-16 h-16 bg-white text-secondary rounded flex items-center justify-center font-bold text-2xl mb-4">
-                EPJ
+              <div className="w-20 h-20 bg-white rounded flex items-center justify-center mb-4 p-2">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F8c6701fbe7cf437c829a3713e11862cc%2Fccb889f3e488441f83c2209e88d69e4e?format=webp&width=200"
+                  alt="INGETECH ASCENSORES"
+                  className="h-full w-full object-contain"
+                />
               </div>
               <p className="text-xs text-white/80">
-                Empresas Peruanas de Elevación y Equipos Verticales, S.A.C.
+                INGETECH ASCENSORES
               </p>
             </div>
 
