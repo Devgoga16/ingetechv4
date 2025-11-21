@@ -159,7 +159,7 @@ export function Layout({ children }: LayoutProps) {
       </div>
 
       {/* Spacer when header is sticky */}
-      {isSticky && <div className="h-28" />}
+      {isSticky && <div className="h-16" />}
 
       {/* Main content with sidebar */}
       <div className="flex flex-1">
