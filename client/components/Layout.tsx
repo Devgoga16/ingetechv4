@@ -39,6 +39,29 @@ export function Layout({ children }: LayoutProps) {
       {/* Sentinel element for sticky detection */}
       <div ref={elementRef} className="h-0" />
 
+      {/* Contact Info Bar */}
+      <div className="hidden md:flex justify-between items-center py-3 px-4 sm:px-6 lg:px-8 bg-white border-b border-muted text-xs text-foreground/70">
+        <div className="flex gap-6">
+          <div className="flex items-center gap-2">
+            <MapPin size={14} />
+            <span>
+              Ubicación: Av. Prolongación Benavides 3583, Oficina 101,
+              Santiago de Surco, Lima
+            </span>
+          </div>
+        </div>
+        <div className="flex gap-6">
+          <div className="flex items-center gap-2">
+            <Phone size={14} />
+            <span>Llamanos: +51 981 311 694</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Mail size={14} />
+            <span>tesoreria@epj.com.pe</span>
+          </div>
+        </div>
+      </div>
+
       {/* Header and Navigation - Sticky Container */}
       <div
         className={`transition-all duration-300 ${
@@ -54,10 +77,10 @@ export function Layout({ children }: LayoutProps) {
                 : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
             }`}
           >
-            {/* Main header with logo and contact info */}
+            {/* Main header with logo */}
             <div
               className={`flex justify-between items-center ${
-                isSticky ? "py-2" : "py-3"
+                isSticky ? "py-2" : "py-4"
               }`}
             >
               <Link
@@ -76,27 +99,6 @@ export function Layout({ children }: LayoutProps) {
                   />
                 </div>
               </Link>
-
-              {/* Contact info - Hidden when sticky */}
-              {!isSticky && (
-                <div className="hidden md:flex gap-6 text-xs text-foreground/70">
-                  <div className="flex items-center gap-2">
-                    <MapPin size={14} />
-                    <span>
-                      Ubicación: Av. Prolongación Benavides 3583, Oficina 101,
-                      Santiago de Surco, Lima
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Phone size={14} />
-                    <span>Llamanos: +51 981 311 694</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Mail size={14} />
-                    <span>tesoreria@epj.com.pe</span>
-                  </div>
-                </div>
-              )}
 
               {/* Navigation in header when sticky */}
               {isSticky && (
@@ -155,7 +157,7 @@ export function Layout({ children }: LayoutProps) {
       </div>
 
       {/* Spacer when header is sticky */}
-      {isSticky && <div className="h-16" />}
+      {isSticky && <div className="h-24" />}
 
       {/* Main content with sidebar */}
       <div className="flex flex-1">
