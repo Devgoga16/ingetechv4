@@ -50,33 +50,33 @@ export default function Index() {
   const products = [
     {
       image:
-        "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=400&fit=crop",
+        "https://images.pexels.com/photos/16383996/pexels-photo-16383996.jpeg",
       title: "Ascensores Residenciales, Comerciales y de Oficinas",
-      description: "",
+      description: "Sistemas modernos de elevación para espacios residenciales y comerciales",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1565733833556-8b6efb616050?w=400&h=400&fit=crop",
+        "https://images.pexels.com/photos/29224552/pexels-photo-29224552.jpeg",
       title: "Montacargas (Isolo Carga y Carga Acompañada)",
-      description: "",
+      description: "Soluciones robustas para transporte de carga en almacenes e industria",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop",
+        "https://images.pexels.com/photos/3084315/pexels-photo-3084315.jpeg",
       title: "Escaleras, Rampas y Pasarelas Mecánicas",
-      description: "",
+      description: "Movilidad segura y eficiente en espacios públicos y comerciales",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1503387762519-52582b1d6aa3?w=400&h=400&fit=crop",
+        "https://images.pexels.com/photos/1838112/pexels-photo-1838112.jpeg",
       title: "Salida Alturas y Salva Escaleras",
-      description: "",
+      description: "Accesibilidad y seguridad para personas con movilidad reducida",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1485579149c01123123?w=400&h=400&fit=crop",
+        "https://images.pexels.com/photos/1849115/pexels-photo-1849115.jpeg",
       title: "Monta Vehículos Hidráulicos",
-      description: "",
+      description: "Sistemas de elevación para estacionamientos y talleres automotrices",
     },
     {
       image:
