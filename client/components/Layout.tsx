@@ -39,35 +39,37 @@ export function Layout({ children }: LayoutProps) {
       {/* Sentinel element for sticky detection */}
       <div ref={elementRef} className="h-0" />
 
-      {/* Contact Info Bar */}
-      <div className="hidden md:flex justify-between items-center py-3 px-4 sm:px-6 lg:px-8 bg-white border-b border-muted text-xs text-foreground/70">
-        <div className="flex gap-6">
-          <div className="flex items-center gap-2">
-            <MapPin size={14} />
-            <span>
-              Ubicación: Av. Prolongación Benavides 3583, Oficina 101,
-              Santiago de Surco, Lima
-            </span>
-          </div>
-        </div>
-        <div className="flex gap-6">
-          <div className="flex items-center gap-2">
-            <Phone size={14} />
-            <span>Llamanos: +51 981 311 694</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Mail size={14} />
-            <span>tesoreria@epj.com.pe</span>
-          </div>
-        </div>
-      </div>
-
       {/* Header and Navigation - Sticky Container */}
       <div
         className={`transition-all duration-300 ${
           isSticky ? "fixed top-0 left-0 right-0 z-40 shadow-lg" : "relative"
         }`}
       >
+        {/* Contact Info Bar - Shown at top when sticky */}
+        {isSticky && (
+          <div className="hidden md:flex justify-between items-center py-2 px-4 sm:px-6 lg:px-8 bg-white border-b border-muted text-xs text-foreground/70">
+            <div className="flex gap-6">
+              <div className="flex items-center gap-2">
+                <MapPin size={14} />
+                <span>
+                  Ubicación: Av. Prolongación Benavides 3583, Oficina 101,
+                  Santiago de Surco, Lima
+                </span>
+              </div>
+            </div>
+            <div className="flex gap-6">
+              <div className="flex items-center gap-2">
+                <Phone size={14} />
+                <span>Llamanos: +51 981 311 694</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail size={14} />
+                <span>tesoreria@epj.com.pe</span>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Header */}
         <header className="bg-white border-b border-primary/10">
           <div
@@ -77,10 +79,10 @@ export function Layout({ children }: LayoutProps) {
                 : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
             }`}
           >
-            {/* Main header with logo */}
+            {/* Main header with logo and contact info */}
             <div
               className={`flex justify-between items-center ${
-                isSticky ? "py-2" : "py-4"
+                isSticky ? "py-2" : "py-3"
               }`}
             >
               <Link
@@ -99,6 +101,27 @@ export function Layout({ children }: LayoutProps) {
                   />
                 </div>
               </Link>
+
+              {/* Contact info when not sticky */}
+              {!isSticky && (
+                <div className="hidden md:flex gap-6 text-xs text-foreground/70">
+                  <div className="flex items-center gap-2">
+                    <MapPin size={14} />
+                    <span>
+                      Ubicación: Av. Prolongación Benavides 3583, Oficina 101,
+                      Santiago de Surco, Lima
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Phone size={14} />
+                    <span>Llamanos: +51 981 311 694</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Mail size={14} />
+                    <span>tesoreria@epj.com.pe</span>
+                  </div>
+                </div>
+              )}
 
               {/* Navigation in header when sticky */}
               {isSticky && (
