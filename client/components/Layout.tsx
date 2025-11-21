@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Facebook,
@@ -9,6 +9,7 @@ import {
   Phone,
   Mail,
   MessageCircle,
+  X,
 } from "lucide-react";
 import { useSticky } from "@/hooks/useSticky";
 
@@ -18,6 +19,7 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   const { elementRef, isSticky } = useSticky();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navItems = [
     { label: "INICIO", href: "/" },
     { label: "QUIENES SOMOS", href: "/about" },
@@ -130,7 +132,7 @@ export function Layout({ children }: LayoutProps) {
                     <Link
                       key={item.href}
                       to={item.href}
-                      className="font-semibold text-foreground hover:text-primary transition-all duration-300 text-xs"
+                      className="nav-link font-semibold text-foreground hover:text-primary text-xs"
                     >
                       {item.label}
                     </Link>
@@ -150,30 +152,57 @@ export function Layout({ children }: LayoutProps) {
                   <Link
                     key={item.href}
                     to={item.href}
-                    className="font-semibold text-white hover:text-white/80 transition-all duration-300 text-sm"
+                    className="nav-link-white font-semibold text-white text-sm"
                   >
                     {item.label}
                   </Link>
                 ))}
               </div>
-              {/* Mobile menu button placeholder */}
+              {/* Mobile menu button */}
               <div className="lg:hidden flex items-center justify-between py-4">
-                <button className="text-white">
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="text-white hover:text-white/80 transition-colors"
+                  aria-label="Toggle menu"
+                  aria-expanded={mobileMenuOpen}
+                >
+                  {mobileMenuOpen ? (
+                    <X className="w-6 h-6" />
+                  ) : (
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 6h16M4 12h16M4 18h16"
+                      />
+                    </svg>
+                  )}
                 </button>
               </div>
+
+              {/* Mobile menu dropdown */}
+              {mobileMenuOpen && (
+                <div className="lg:hidden bg-primary border-t border-white/20 max-h-96 overflow-y-auto">
+                  <div className="flex flex-col">
+                    {navItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="nav-link-white font-semibold text-white text-sm px-4 sm:px-6 lg:px-8 py-3 border-b border-white/10 hover:bg-primary/80 transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </nav>
         )}

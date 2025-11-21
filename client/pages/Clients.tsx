@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import { LogosCarousel } from "@/components/LogosCarousel";
 import { Building2, Store, Zap, Home, Briefcase } from "lucide-react";
 
 export default function Clients() {
@@ -60,22 +61,55 @@ export default function Clients() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-r from-primary to-primary/80 px-4 sm:px-6 lg:px-8 text-white overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -z-10" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -z-10" />
+      <section
+        className="relative py-12 sm:py-16 md:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 text-white overflow-hidden"
+        style={{
+          backgroundImage:
+            "url(https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/75 to-black/60 -z-10" />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Nuestros Clientes
+          <div className="flex flex-col items-start">
+            {/* Decorative line and label */}
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 md:mb-8">
+              <div className="h-1 w-10 sm:w-12 bg-gradient-to-r from-primary to-primary/40 rounded-full" />
+              <span
+                className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-primary drop-shadow-lg"
+                style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
+              >
+                Nuestros Asociados
+              </span>
+            </div>
+
+            {/* Main title */}
+            <h1
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight max-w-3xl drop-shadow-2xl"
+              style={{ textShadow: "0 4px 12px rgba(0,0,0,0.6)" }}
+            >
+              Empresas que confían en nosotros
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Empresas líderes confían en nuestras soluciones de elevación y
-              movilidad
+
+            {/* Subtitle */}
+            <p
+              className="text-base sm:text-lg md:text-xl text-white max-w-2xl leading-relaxed drop-shadow-lg"
+              style={{ textShadow: "0 3px 8px rgba(0,0,0,0.5)" }}
+            >
+              Desde proyectos residenciales hasta complejos industriales,
+              nuestras soluciones de elevación y movilidad son elegidas por
+              empresas líderes en toda la región.
             </p>
           </div>
         </div>
       </section>
+
+      {/* Logos Carousel */}
+      <LogosCarousel />
 
       {/* Main Clients Section */}
       <section className="relative py-24 md:py-40 bg-gradient-to-b from-white via-slate-50 to-white px-4 sm:px-6 lg:px-8 overflow-hidden">
