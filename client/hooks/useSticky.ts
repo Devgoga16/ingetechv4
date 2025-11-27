@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export function useSticky() {
-  const elementRef = useRef<HTMLElement>(null);
+  const elementRef = useRef<HTMLDivElement>(null);
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {

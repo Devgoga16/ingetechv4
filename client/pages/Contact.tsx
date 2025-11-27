@@ -14,19 +14,18 @@ export default function Contact() {
             <div className="bg-muted rounded-lg p-8 text-center border-t-4 border-primary">
               <Phone size={32} className="mx-auto text-primary mb-4" />
               <h3 className="font-bold text-foreground mb-2">Teléfono</h3>
-              <p className="text-foreground/70">+51 981 311 694</p>
+              <p className="text-foreground/70">+51 929 970 920</p>
             </div>
             <div className="bg-muted rounded-lg p-8 text-center border-t-4 border-primary">
               <Mail size={32} className="mx-auto text-primary mb-4" />
               <h3 className="font-bold text-foreground mb-2">Email</h3>
-              <p className="text-foreground/70">tesoreria@epj.com.pe</p>
+              <p className="text-foreground/70">ventas@ingetech-elevators.com</p>
             </div>
             <div className="bg-muted rounded-lg p-8 text-center border-t-4 border-primary">
               <MapPin size={32} className="mx-auto text-primary mb-4" />
               <h3 className="font-bold text-foreground mb-2">Ubicación</h3>
               <p className="text-foreground/70 text-sm">
-                Av. Prolongación Benavides 3583, Oficina 101, Santiago de Surco,
-                Lima
+                Urb. Las Delicias de Villa, Mz. G9, Lt.6, Chorrillos, Lima.
               </p>
             </div>
           </div>

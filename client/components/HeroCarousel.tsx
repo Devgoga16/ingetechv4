@@ -3,14 +3,14 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface HeroCarouselProps {
   images: string[];
-  title: string;
+  titles: string[];
   buttonText: string;
   onButtonClick?: () => void;
 }
 
 export function HeroCarousel({
   images,
-  title,
+  titles,
   buttonText,
   onButtonClick,
 }: HeroCarouselProps) {
@@ -57,7 +57,7 @@ export function HeroCarousel({
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4 text-center">
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl leading-tight">
-          {title}
+          {titles[currentIndex]}
         </h1>
         <button
           onClick={onButtonClick}

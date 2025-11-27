@@ -1,5 +1,4 @@
 import { ReactNode, useState } from "react";
-import { Link } from "react-router-dom";
 import {
   Facebook,
   Linkedin,
@@ -20,14 +19,30 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const { elementRef, isSticky } = useSticky();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
   const navItems = [
-    { label: "INICIO", href: "/" },
-    { label: "QUIENES SOMOS", href: "/about" },
-    { label: "PRODUCTOS", href: "/products" },
-    { label: "CATALOGO", href: "/catalog" },
-    { label: "CLIENTES", href: "/clients" },
-    { label: "CONTACTO", href: "/contact" },
+    { label: "INICIO", href: "#inicio" },
+    { label: "SERVICIOS", href: "#servicios" },
+    { label: "CATÁLOGO", href: "#catalogo" },
+    { label: "NOSOTROS", href: "#nosotros" },
+    { label: "CONTACTO", href: "#contacto" },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      const offset = 100; // Adjust for sticky header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+      setMobileMenuOpen(false);
+    }
+  };
 
   const socialLinks = [
     { icon: Facebook, href: "#" },
@@ -54,19 +69,18 @@ export function Layout({ children }: LayoutProps) {
               <div className="flex items-center gap-2">
                 <MapPin size={14} />
                 <span>
-                  Ubicación: Av. Prolongación Benavides 3583, Oficina 101,
-                  Santiago de Surco, Lima
+                  Ubicación: Urb. Las Delicias de Villa, Mz. G9, Lt.6, Chorrillos, Lima
                 </span>
               </div>
             </div>
             <div className="flex gap-6">
               <div className="flex items-center gap-2">
                 <Phone size={14} />
-                <span>Llamanos: +51 981 311 694</span>
+                <span>Llamanos: +51 929 970 920</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={14} />
-                <span>tesoreria@epj.com.pe</span>
+                <span>ventas@ingetech-elevators.com</span>
               </div>
             </div>
           </div>
@@ -87,8 +101,9 @@ export function Layout({ children }: LayoutProps) {
                 isSticky ? "py-2" : "py-3"
               }`}
             >
-              <Link
-                to="/"
+              <a
+                href="#inicio"
+                onClick={(e) => handleNavClick(e, "#inicio")}
                 className={`flex items-center gap-2 flex-shrink-0 transition-all duration-300 ${
                   isSticky ? "h-8" : "h-12"
                 }`}
@@ -102,7 +117,7 @@ export function Layout({ children }: LayoutProps) {
                     className="h-12 w-auto object-contain"
                   />
                 </div>
-              </Link>
+              </a>
 
               {/* Contact info when not sticky */}
               {!isSticky && (
@@ -110,17 +125,16 @@ export function Layout({ children }: LayoutProps) {
                   <div className="flex items-center gap-2">
                     <MapPin size={14} />
                     <span>
-                      Ubicación: Av. Prolongación Benavides 3583, Oficina 101,
-                      Santiago de Surco, Lima
+                      Ubicación: Urb. Las Delicias de Villa, Mz. G9, Lt.6, Chorrillos, Lima. 
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Phone size={14} />
-                    <span>Llamanos: +51 981 311 694</span>
+                    <span>Llamanos: +51 929 970 920</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail size={14} />
-                    <span>tesoreria@epj.com.pe</span>
+                    <span>ventas@ingetech-elevators.com</span>
                   </div>
                 </div>
               )}
@@ -129,13 +143,14 @@ export function Layout({ children }: LayoutProps) {
               {isSticky && (
                 <nav className="hidden lg:flex items-center gap-6">
                   {navItems.map((item) => (
-                    <Link
+                    <a
                       key={item.href}
-                      to={item.href}
+                      href={item.href}
+                      onClick={(e) => handleNavClick(e, item.href)}
                       className="nav-link font-semibold text-foreground hover:text-primary text-xs"
                     >
                       {item.label}
-                    </Link>
+                    </a>
                   ))}
                 </nav>
               )}
@@ -149,13 +164,14 @@ export function Layout({ children }: LayoutProps) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="hidden lg:flex items-center justify-center gap-8 py-4">
                 {navItems.map((item) => (
-                  <Link
+                  <a
                     key={item.href}
-                    to={item.href}
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     className="nav-link-white font-semibold text-white text-sm"
                   >
                     {item.label}
-                  </Link>
+                  </a>
                 ))}
               </div>
               {/* Mobile menu button */}
@@ -191,14 +207,14 @@ export function Layout({ children }: LayoutProps) {
                 <div className="lg:hidden bg-primary border-t border-white/20 max-h-96 overflow-y-auto">
                   <div className="flex flex-col">
                     {navItems.map((item) => (
-                      <Link
+                      <a
                         key={item.href}
-                        to={item.href}
-                        onClick={() => setMobileMenuOpen(false)}
+                        href={item.href}
+                        onClick={(e) => handleNavClick(e, item.href)}
                         className="nav-link-white font-semibold text-white text-sm px-4 sm:px-6 lg:px-8 py-3 border-b border-white/10 hover:bg-primary/80 transition-colors"
                       >
                         {item.label}
-                      </Link>
+                      </a>
                     ))}
                   </div>
                 </div>
@@ -237,7 +253,7 @@ export function Layout({ children }: LayoutProps) {
 
       {/* WhatsApp floating button */}
       <a
-        href="https://wa.me/51981311694"
+        href="https://wa.me/51929970920"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50"
