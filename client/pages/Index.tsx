@@ -109,6 +109,10 @@ export default function Index() {
       name: "HIDAL",
       logo: "/brands/hidral-logo.png",
     },
+    {
+      name: "SWORD",
+      logo: "/brands/sword-logo.jpeg",
+    },
   ];
 
   const features = [
@@ -218,17 +222,12 @@ para maximizar tu confort de viaje, elevando el valor de tus edificios.
           <div className="text-center mb-20">
             <div className="inline-block mb-6">
               <span className="text-primary font-bold text-sm tracking-widest uppercase">
-                Nuestras soluciones
+                GRUPO INGETECH
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
               Catálogo de Soluciones
             </h2>
-            <p className="text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed">
-              Donde la excelencia y la funcionalidad se encuentran en cada
-              nivel. Descubre nuestro amplio catálogo de sistemas de elevación y
-              movilidad.
-            </p>
             <div className="flex items-center justify-center gap-2 mt-8">
               <div className="w-12 h-1 bg-gradient-to-r from-transparent to-primary" />
               <div className="w-2 h-2 rounded-full bg-primary" />
@@ -256,10 +255,10 @@ para maximizar tu confort de viaje, elevando el valor de tus edificios.
           <h2 className="text-center text-2xl md:text-3xl font-bold text-primary mb-12">
             REPRESENTANTES Y DISTRIBUIDOR DE:
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 items-center">
             {brands.map((brand, index) => (
               <div key={index} className="flex justify-center">
-                <div className="bg-white rounded-lg p-8 text-center border-2 border-primary hover:shadow-lg transition-shadow min-h-[120px] flex items-center justify-center">
+                <div className="bg-white rounded-lg p-8 text-center hover:shadow-lg transition-shadow min-h-[120px] flex items-center justify-center">
                   <img 
                     src={brand.logo} 
                     alt={brand.name} 
@@ -275,14 +274,14 @@ para maximizar tu confort de viaje, elevando el valor de tus edificios.
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <img
-                  src="https://images.unsplash.com/photo-1565733833556-8b6efb616050?w=400&h=300&fit=crop"
-                  alt="EPJ"
+                  src="/brands/ingelogogrande.jpg"
+                  alt="Grupo Ingetech"
                   className="rounded-lg w-full"
                 />
               </div>
               <div className="flex flex-col justify-center">
                 <h3 className="text-2xl font-bold text-primary mb-4">
-                  EMPRESAS PERUANAS DE ELEVACIÓN
+                  GRUPO INGETECH
                 </h3>
                 <p className="text-foreground/80 text-sm mb-6 leading-relaxed">
                   Nacemos de los años de experiencia de un equipo de técnicos especialistas en transporte vertical, unidos por el firme propósito de elevar el estándar de seguridad, eficiencia y transparencia en el sector. Comprendemos que un ascensor es más que una máquina; es el corazón de su edificio y una promesa de confianza para quienes lo usan cada día. Por eso, ofrecemos servicios y equipos que cumplen los más altos estándares a nivel mundial, que le brinda total tranquilidad y elevará el valor de su edificio.

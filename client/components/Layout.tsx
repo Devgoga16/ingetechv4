@@ -345,8 +345,7 @@ export function Layout({ children }: LayoutProps) {
                 <li className="flex items-start gap-2">
                   <MapPin size={16} className="flex-shrink-0 mt-0.5" />
                   <span>
-                    Av. Prolongación Benavides 3583, Oficina 101, Santiago de
-                    Surco, Lima
+                    Urb. Las Delicias de Villa, Mz. G9, Lt.6, Chorrillos, Lima
                   </span>
                 </li>
               </ul>
