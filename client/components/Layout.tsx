@@ -58,9 +58,7 @@ export function Layout({ children }: LayoutProps) {
 
       {/* Header and Navigation - Sticky Container */}
       <div
-        className={`transition-all duration-300 ${
-          isSticky ? "fixed top-0 left-0 right-0 z-40 shadow-lg" : "relative"
-        }`}
+        className="fixed top-0 left-0 right-0 z-40 shadow-lg transition-all duration-300"
       >
         {/* Contact Info Bar - Shown at top when sticky */}
         {isSticky && (
@@ -152,31 +150,12 @@ export function Layout({ children }: LayoutProps) {
                   ))}
                 </nav>
               )}
-            </div>
-          </div>
-        </header>
 
-        {/* Red Navigation Bar - Hidden when sticky */}
-        {!isSticky && (
-          <nav className="bg-primary text-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="hidden lg:flex items-center justify-center gap-8 py-4">
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
-                    className="nav-link-white font-semibold text-white text-sm"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-              {/* Mobile menu button */}
-              <div className="lg:hidden flex items-center justify-between py-4">
+              {/* Mobile menu button - Always visible on mobile */}
+              <div className="lg:hidden">
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="text-white hover:text-white/80 transition-colors"
+                  className={`${isSticky ? 'text-foreground hover:text-primary' : 'text-foreground hover:text-primary'} transition-colors`}
                   aria-label="Toggle menu"
                   aria-expanded={mobileMenuOpen}
                 >
@@ -199,31 +178,51 @@ export function Layout({ children }: LayoutProps) {
                   )}
                 </button>
               </div>
+            </div>
+          </div>
+        </header>
 
-              {/* Mobile menu dropdown */}
-              {mobileMenuOpen && (
-                <div className="lg:hidden bg-primary border-t border-white/20 max-h-96 overflow-y-auto">
-                  <div className="flex flex-col">
-                    {navItems.map((item) => (
-                      <a
-                        key={item.href}
-                        href={item.href}
-                        onClick={(e) => handleNavClick(e, item.href)}
-                        className="nav-link-white font-semibold text-white text-sm px-4 sm:px-6 lg:px-8 py-3 border-b border-white/10 hover:bg-primary/80 transition-colors"
-                      >
-                        {item.label}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
+        {/* Mobile menu dropdown - Always on top level */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden bg-primary border-t border-white/20 max-h-96 overflow-y-auto">
+            <div className="flex flex-col">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="nav-link-white font-semibold text-white text-sm px-4 sm:px-6 lg:px-8 py-3 border-b border-white/10 hover:bg-primary/80 transition-colors"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Red Navigation Bar - Hidden when sticky, Desktop only */}
+        {!isSticky && (
+          <nav className="bg-primary text-white hidden lg:block">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex items-center justify-center gap-8 py-4">
+                {navItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className="nav-link-white font-semibold text-white text-sm"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </nav>
         )}
       </div>
 
-      {/* Spacer when header is sticky */}
-      {isSticky && <div className="h-28" />}
+      {/* Spacer for fixed header */}
+      <div className="h-20" />
 
       {/* Main content with sidebar */}
       <div className="flex flex-1">
