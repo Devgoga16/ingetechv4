@@ -105,18 +105,16 @@ export function Layout({ children }: LayoutProps) {
                 href="#inicio"
                 onClick={(e) => handleNavClick(e, "#inicio")}
                 className={`flex items-center gap-2 flex-shrink-0 transition-all duration-300 ${
-                  isSticky ? "h-8" : "h-12"
+                  isSticky ? "h-12" : "h-20"
                 }`}
               >
-                <div
-                  className={`flex flex-col items-center justify-center transition-all duration-300 ${isSticky ? "scale-60" : ""}`}
-                >
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F8c6701fbe7cf437c829a3713e11862cc%2F7602b26dad78482a93de24d014f77378?format=webp&width=800"
-                    alt="INGETECH ASCENSORES"
-                    className="h-12 w-auto object-contain"
-                  />
-                </div>
+                <img
+                  src="/brands/ingetechlogo.jpg"
+                  alt="INGETECH ASCENSORES"
+                  className={`transition-all duration-300 ${
+                    isSticky ? "h-12" : "h-20"
+                  } w-auto object-contain`}
+                />
               </a>
 
               {/* Contact info when not sticky */}
@@ -316,9 +314,9 @@ export function Layout({ children }: LayoutProps) {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Logo */}
             <div>
-              <div className="w-20 h-20 bg-white rounded flex items-center justify-center mb-4 p-2">
+              <div className="w-32 h-24 bg-white rounded flex items-center justify-center mb-4 p-3">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F8c6701fbe7cf437c829a3713e11862cc%2F7602b26dad78482a93de24d014f77378?format=webp&width=800"
+                  src="/brands/ingetechlogo.jpg"
                   alt="INGETECH ASCENSORES"
                   className="h-full w-full object-contain"
                 />
@@ -358,7 +356,7 @@ export function Layout({ children }: LayoutProps) {
 
           {/* Bottom copyright */}
           <div className="border-t border-white/20 mt-8 pt-6 text-center text-xs text-white/60">
-            <p>&copy; 2024 EPJ. Todos los derechos reservados.</p>
+            <p>&copy; 2025 INGETECH. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
