@@ -20,8 +20,60 @@ import {
   Mail,
   MessageCircle,
 } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
 
 export default function Index() {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Error al enviar el mensaje");
+      }
+
+      toast({
+        title: "Mensaje enviado",
+        description: "Nos pondremos en contacto contigo pronto.",
+      });
+
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Hubo un problema al enviar tu mensaje. Inténtalo de nuevo.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const heroImages = [
     "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=600&fit=crop",
     "https://images.unsplash.com/photo-1565733833556-8b6efb616050?w=1200&h=600&fit=crop",
@@ -188,8 +240,8 @@ export default function Index() {
               Te Ofrecemos
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed">
-              Servicios innovadores y de calidad, manteniendo el mismo estándar de las marcas de clase mundial, 
-para maximizar tu confort de viaje, elevando el valor de tus edificios.
+              Servicios innovadores y de calidad, manteniendo el mismo estándar de las marcas de clase mundial,
+              para maximizar tu confort de viaje, elevando el valor de tus edificios.
             </p>
             <div className="flex items-center justify-center gap-2 mt-8">
               <div className="w-12 h-1 bg-gradient-to-r from-transparent to-primary" />
@@ -259,9 +311,9 @@ para maximizar tu confort de viaje, elevando el valor de tus edificios.
             {brands.map((brand, index) => (
               <div key={index} className="flex justify-center">
                 <div className="bg-white rounded-lg p-8 text-center hover:shadow-lg transition-shadow min-h-[120px] flex items-center justify-center">
-                  <img 
-                    src={brand.logo} 
-                    alt={brand.name} 
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
                     className="max-h-16 w-auto object-contain"
                   />
                 </div>
@@ -286,7 +338,7 @@ para maximizar tu confort de viaje, elevando el valor de tus edificios.
                 <p className="text-foreground/80 text-sm mb-6 leading-relaxed">
                   Nacemos de los años de experiencia de un equipo de técnicos especialistas en transporte vertical, unidos por el firme propósito de elevar el estándar de seguridad, eficiencia y transparencia en el sector. Comprendemos que un ascensor es más que una máquina; es el corazón de su edificio y una promesa de confianza para quienes lo usan cada día. Por eso, ofrecemos servicios y equipos que cumplen los más altos estándares a nivel mundial, que le brinda total tranquilidad y elevará el valor de su edificio.
                 </p>
-                <button 
+                <button
                   onClick={handleCatalogClick}
                   className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded font-bold text-sm w-fit transition-colors"
                 >
@@ -318,7 +370,7 @@ para maximizar tu confort de viaje, elevando el valor de tus edificios.
               "TU SOCIO ESTRATEGICO PARA PROYECTOS QUE BUSCAN CALIDAD,
               INNOVACION Y RESPALDO EN CADA ETAPA."
             </p>
-            <button 
+            <button
               onClick={handleContactClick}
               className="bg-primary hover:bg-primary/90 text-white px-8 py-2 rounded font-bold text-sm transition-colors"
             >
@@ -393,13 +445,17 @@ para maximizar tu confort de viaje, elevando el valor de tus edificios.
 
             {/* Contact Form */}
             <div className="bg-white rounded-lg shadow-lg p-8">
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Nombre
                   </label>
                   <input
                     type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-2 border border-muted rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="Tu nombre"
                   />
@@ -411,6 +467,10 @@ para maximizar tu confort de viaje, elevando el valor de tus edificios.
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-2 border border-muted rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="tu@email.com"
                   />
@@ -422,6 +482,9 @@ para maximizar tu confort de viaje, elevando el valor de tus edificios.
                   </label>
                   <input
                     type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-muted rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="+51 999 999 999"
                   />
@@ -433,6 +496,10 @@ para maximizar tu confort de viaje, elevando el valor de tus edificios.
                   </label>
                   <textarea
                     rows={4}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-2 border border-muted rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="Cuéntanos sobre tu proyecto..."
                   />
@@ -440,9 +507,10 @@ para maximizar tu confort de viaje, elevando el valor de tus edificios.
 
                 <button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-bold transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-bold transition-colors disabled:opacity-50"
                 >
-                  ENVIAR MENSAJE
+                  {isSubmitting ? "ENVIANDO..." : "ENVIAR MENSAJE"}
                 </button>
               </form>
             </div>

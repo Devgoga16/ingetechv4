@@ -11,6 +11,7 @@ import {
   X,
 } from "lucide-react";
 import { useSticky } from "@/hooks/useSticky";
+import { Toaster } from "@/components/ui/toaster";
 
 interface LayoutProps {
   children: ReactNode;
@@ -19,7 +20,7 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const { elementRef, isSticky } = useSticky();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
   const navItems = [
     { label: "INICIO", href: "#inicio" },
     { label: "SERVICIOS", href: "#servicios" },
@@ -87,31 +88,27 @@ export function Layout({ children }: LayoutProps) {
         {/* Header */}
         <header className="bg-white border-b border-primary/10">
           <div
-            className={`${
-              isSticky
-                ? "px-4 sm:px-6 lg:px-8"
-                : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-            }`}
+            className={`${isSticky
+              ? "px-4 sm:px-6 lg:px-8"
+              : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+              }`}
           >
             {/* Main header with logo and contact info */}
             <div
-              className={`flex justify-between items-center ${
-                isSticky ? "py-2" : "py-3"
-              }`}
+              className={`flex justify-between items-center ${isSticky ? "py-2" : "py-3"
+                }`}
             >
               <a
                 href="#inicio"
                 onClick={(e) => handleNavClick(e, "#inicio")}
-                className={`flex items-center gap-2 flex-shrink-0 transition-all duration-300 ${
-                  isSticky ? "h-12" : "h-20"
-                }`}
+                className={`flex items-center gap-2 flex-shrink-0 transition-all duration-300 ${isSticky ? "h-12" : "h-20"
+                  }`}
               >
                 <img
                   src="/brands/ingetechlogo.jpg"
                   alt="INGETECH ASCENSORES"
-                  className={`transition-all duration-300 ${
-                    isSticky ? "h-12" : "h-20"
-                  } w-auto object-contain`}
+                  className={`transition-all duration-300 ${isSticky ? "h-12" : "h-20"
+                    } w-auto object-contain`}
                 />
               </a>
 
@@ -121,7 +118,7 @@ export function Layout({ children }: LayoutProps) {
                   <div className="flex items-center gap-2">
                     <MapPin size={14} />
                     <span>
-                      Ubicación: Urb. Las Delicias de Villa, Mz. G9, Lt.6, Chorrillos, Lima. 
+                      Ubicación: Urb. Las Delicias de Villa, Mz. G9, Lt.6, Chorrillos, Lima.
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -358,6 +355,7 @@ export function Layout({ children }: LayoutProps) {
           </div>
         </div>
       </footer>
+      <Toaster />
     </div>
   );
 }
