@@ -82,8 +82,8 @@ export default function Index() {
 
   const services = [
     {
-      icon: <Building2 size={48} />,
-      title: "Ascensores Equipos Nuevos",
+      icon: <Zap size={48} />,
+      title: "Servicio de Mantenimiento",
     },
     {
       icon: <Wrench size={48} />,
@@ -94,13 +94,13 @@ export default function Index() {
       title: "Servicios de consultoría e inspección",
     },
     {
-      icon: <Zap size={48} />,
-      title: "Servicio de Mantenimiento",
+      icon: <Building2 size={48} />,
+      title: "Ascensores Equipos Nuevos",
     },
     {
       icon: <TrendingUp size={48} />,
-      title: "Venta de Repuestos",
-    },
+      title: "Venta de Repuestos Originales y Alternativos",
+    }
   ];
 
   const products = [
@@ -150,6 +150,10 @@ export default function Index() {
 
   const brands = [
     {
+      name: "SWORD",
+      logo: "/brands/sword-logov3.jpeg",
+    },
+    {
       name: "XIZI",
       logo: "/brands/xizi-logo.png",
     },
@@ -160,11 +164,7 @@ export default function Index() {
     {
       name: "HIDAL",
       logo: "/brands/hidral-logo.png",
-    },
-    {
-      name: "SWORD",
-      logo: "/brands/sword-logo.jpeg",
-    },
+    }
   ];
 
   const features = [
@@ -310,11 +310,11 @@ export default function Index() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 items-center">
             {brands.map((brand, index) => (
               <div key={index} className="flex justify-center">
-                <div className="bg-white rounded-lg p-8 text-center hover:shadow-lg transition-shadow min-h-[120px] flex items-center justify-center">
+                <div className="bg-white rounded-lg p-8 text-center hover:shadow-lg transition-shadow min-h-[140px] flex items-center justify-center">
                   <img
                     src={brand.logo}
                     alt={brand.name}
-                    className="max-h-16 w-auto object-contain"
+                    className={`${index === 0 ? 'max-h-32' : 'max-h-24'} w-auto object-contain`}
                   />
                 </div>
               </div>

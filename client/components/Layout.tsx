@@ -48,8 +48,7 @@ export function Layout({ children }: LayoutProps) {
   const socialLinks = [
     { icon: Facebook, href: "#" },
     { icon: Linkedin, href: "#" },
-    { icon: Twitter, href: "#" },
-    { icon: Instagram, href: "#" },
+    { icon: Instagram, href: "https://www.instagram.com/ingetech_ascensores" },
   ];
 
   return (
@@ -95,19 +94,19 @@ export function Layout({ children }: LayoutProps) {
           >
             {/* Main header with logo and contact info */}
             <div
-              className={`flex justify-between items-center ${isSticky ? "py-3" : "py-4"
+              className={`flex justify-between items-center ${isSticky ? "py-2" : "py-3"
                 }`}
             >
               <a
                 href="#inicio"
                 onClick={(e) => handleNavClick(e, "#inicio")}
-                className={`flex items-center gap-2 flex-shrink-0 transition-all duration-300 ${isSticky ? "h-16" : "h-28"
+                className={`flex items-center gap-2 flex-shrink-0 transition-all duration-300 ${isSticky ? "h-12" : "h-20"
                   }`}
               >
                 <img
-                  src="/brands/ingetechlogo.jpg"
+                  src="/brands/logonuevo.png"
                   alt="INGETECH ASCENSORES"
-                  className={`transition-all duration-300 ${isSticky ? "h-16" : "h-28"
+                  className={`transition-all duration-300 ${isSticky ? "h-12" : "h-20"
                     } w-auto object-contain drop-shadow-md`}
                 />
               </a>
@@ -219,7 +218,7 @@ export function Layout({ children }: LayoutProps) {
       </div>
 
       {/* Spacer for fixed header */}
-      <div className="h-28" />
+      <div className="h-20" />
 
       {/* Main content with sidebar */}
       <div className="flex flex-1">
