@@ -36,7 +36,7 @@ export function HeroCarousel({
   };
 
   return (
-    <section className="relative h-[400px] md:h-[500px] overflow-hidden bg-black">
+    <section className="relative h-[600px] md:h-[700px] overflow-hidden bg-black">
       {/* Images container */}
       <div className="relative w-full h-full">
         {images.map((image, index) => (
@@ -44,9 +44,8 @@ export function HeroCarousel({
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              index === currentIndex ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentIndex ? "opacity-100" : "opacity-0"
+              }`}
           />
         ))}
 
@@ -91,11 +90,10 @@ export function HeroCarousel({
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === currentIndex
+            className={`w-3 h-3 rounded-full transition-all ${index === currentIndex
                 ? "bg-primary w-8"
                 : "bg-white/50 hover:bg-white/70"
-            }`}
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

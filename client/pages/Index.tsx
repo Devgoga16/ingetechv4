@@ -75,9 +75,9 @@ export default function Index() {
   };
 
   const heroImages = [
-    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1565733833556-8b6efb616050?w=1200&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop",
+    "/imgs/ascensores nuevos.jpg",
+    "/imgs/persona-en-ascensor.jpg",
+    "/imgs/chica en ascensor.png",
   ];
 
   const services = [
@@ -106,42 +106,42 @@ export default function Index() {
   const products = [
     {
       image:
-        "https://images.pexels.com/photos/16383996/pexels-photo-16383996.jpeg",
+        "/imgs/ascensores nuevos 2.jpg",
       title: "Ascensores, Montacargas, Rampas y Escaleras Eléctricas",
       description:
         "Soluciones completas de transporte vertical y movilidad para todo tipo de edificaciones",
     },
     {
       image:
-        "https://images.pexels.com/photos/29224552/pexels-photo-29224552.jpeg",
+        "/imgs/modernizacion-de-ascensores.jpg",
       title: "Modernización",
       description:
         "Actualización y renovación de sistemas de elevación existentes con tecnología moderna",
     },
     {
       image:
-        "https://images.pexels.com/photos/3084315/pexels-photo-3084315.jpeg",
+        "/imgs/ducto de ascensor - mantenimiento.jpg",
       title: "Servicios de Mantenimiento",
       description:
         "Mantenimiento preventivo y correctivo para garantizar el óptimo funcionamiento",
     },
     {
       image:
-        "https://images.pexels.com/photos/1838112/pexels-photo-1838112.jpeg",
+        "/imgs/puertas de hall - mantenimiento.jpg",
       title: "Consultoría e Inspección",
       description:
         "Asesoramiento técnico y evaluaciones profesionales para tus proyectos de elevación",
     },
     {
       image:
-        "https://images.pexels.com/photos/1849115/pexels-photo-1849115.jpeg",
+        "/imgs/botones.jpg",
       title: "Venta de Repuestos",
       description:
         "Repuestos originales y de calidad para todos los sistemas de elevación",
     },
     {
       image:
-        "https://images.pexels.com/photos/17323801/pexels-photo-17323801.jpeg",
+        "/imgs/en ascensores nuevos.jpg",
       title: "Equipos de Accesibilidad",
       description:
         "Salva escaleras, plataformas y soluciones para movilidad reducida",
