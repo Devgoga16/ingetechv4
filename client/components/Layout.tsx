@@ -95,20 +95,20 @@ export function Layout({ children }: LayoutProps) {
           >
             {/* Main header with logo and contact info */}
             <div
-              className={`flex justify-between items-center ${isSticky ? "py-2" : "py-3"
+              className={`flex justify-between items-center ${isSticky ? "py-3" : "py-4"
                 }`}
             >
               <a
                 href="#inicio"
                 onClick={(e) => handleNavClick(e, "#inicio")}
-                className={`flex items-center gap-2 flex-shrink-0 transition-all duration-300 ${isSticky ? "h-12" : "h-20"
+                className={`flex items-center gap-2 flex-shrink-0 transition-all duration-300 ${isSticky ? "h-16" : "h-28"
                   }`}
               >
                 <img
                   src="/brands/ingetechlogo.jpg"
                   alt="INGETECH ASCENSORES"
-                  className={`transition-all duration-300 ${isSticky ? "h-12" : "h-20"
-                    } w-auto object-contain`}
+                  className={`transition-all duration-300 ${isSticky ? "h-16" : "h-28"
+                    } w-auto object-contain drop-shadow-md`}
                 />
               </a>
 
@@ -219,7 +219,7 @@ export function Layout({ children }: LayoutProps) {
       </div>
 
       {/* Spacer for fixed header */}
-      <div className="h-20" />
+      <div className="h-28" />
 
       {/* Main content with sidebar */}
       <div className="flex flex-1">
