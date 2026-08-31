@@ -154,10 +154,34 @@ export default function Index() {
         />
       </section>
 
+      {/* =============================== PROYECTOS ========================== */}
+      <section id="proyectos" className="bg-white py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Nuestro trabajo"
+              title="Proyectos"
+              description="Equipos instalados, modernizados y mantenidos por nuestro equipo."
+            />
+          </Reveal>
+
+          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {projects.map((project, index) => (
+              <Reveal key={project.slug} delay={index * 70} className="h-full">
+                <ProjectCard
+                  project={project}
+                  onOpen={() => setOpenProject(project.slug)}
+                />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ============================== TRUST BAR =========================== */}
       <section
         aria-label="Marcas que representamos"
-        className="border-b border-hairline bg-white"
+        className="border-y border-hairline bg-surface-subtle"
       >
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-12">
@@ -189,7 +213,7 @@ export default function Index() {
       {/* ====================== SOLUCIONES (unified) ======================== */}
       <section
         id="servicios"
-        className="relative overflow-hidden bg-surface-subtle py-20 md:py-28"
+        className="relative overflow-hidden bg-white py-20 md:py-28"
       >
         {/* Legacy anchor: keeps older /#catalogo links working. */}
         <span id="catalogo" aria-hidden="true" className="sr-only" />
@@ -216,30 +240,6 @@ export default function Index() {
             {solutions.map((solution, index) => (
               <Reveal key={solution.slug} delay={index * 70} className="h-full">
                 <SolutionCard solution={solution} eager={index < 3} newTab />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* =============================== PROYECTOS ========================== */}
-      <section id="proyectos" className="bg-white py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Nuestro trabajo"
-              title="Proyectos"
-              description="Equipos instalados, modernizados y mantenidos por nuestro equipo."
-            />
-          </Reveal>
-
-          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project, index) => (
-              <Reveal key={project.slug} delay={index * 70} className="h-full">
-                <ProjectCard
-                  project={project}
-                  onOpen={() => setOpenProject(project.slug)}
-                />
               </Reveal>
             ))}
           </div>

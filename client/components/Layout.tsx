@@ -23,8 +23,8 @@ interface LayoutProps {
 
 const navItems = [
   { label: "INICIO", hash: "#inicio", id: "inicio" },
-  { label: "SOLUCIONES", hash: "#servicios", id: "servicios" },
   { label: "PROYECTOS", hash: "#proyectos", id: "proyectos" },
+  { label: "SOLUCIONES", hash: "#servicios", id: "servicios" },
   { label: "NOSOTROS", hash: "#nosotros", id: "nosotros" },
   { label: "CONTACTO", hash: "#contacto", id: "contacto" },
 ];
