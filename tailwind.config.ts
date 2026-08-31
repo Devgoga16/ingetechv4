@@ -47,6 +47,29 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        brand: {
+          50: "hsl(var(--brand-50))",
+          100: "hsl(var(--brand-100))",
+          200: "hsl(var(--brand-200))",
+          300: "hsl(var(--brand-300))",
+          400: "hsl(var(--brand-400))",
+          500: "hsl(var(--brand-500))",
+          600: "hsl(var(--brand-600))",
+          700: "hsl(var(--brand-700))",
+        },
+        ink: {
+          500: "hsl(var(--ink-500))",
+          600: "hsl(var(--ink-600))",
+          700: "hsl(var(--ink-700))",
+          800: "hsl(var(--ink-800))",
+          900: "hsl(var(--ink-900))",
+        },
+        surface: {
+          DEFAULT: "hsl(var(--surface))",
+          subtle: "hsl(var(--surface-subtle))",
+          muted: "hsl(var(--surface-muted))",
+        },
+        hairline: "hsl(var(--hairline))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -62,6 +85,18 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        "2xl": "1rem",
+        "3xl": "1.5rem",
+      },
+      boxShadow: {
+        card: "0 1px 2px hsl(var(--ink-900) / 0.04), 0 8px 24px -12px hsl(var(--ink-900) / 0.12)",
+        "card-hover":
+          "0 2px 4px hsl(var(--ink-900) / 0.05), 0 24px 48px -16px hsl(var(--ink-900) / 0.22)",
+        header: "0 1px 0 hsl(var(--hairline)), 0 8px 24px -16px hsl(var(--ink-900) / 0.25)",
+        "brand-glow": "0 12px 32px -12px hsl(var(--primary) / 0.55)",
+      },
+      maxWidth: {
+        prose: "68ch",
       },
       keyframes: {
         "accordion-down": {
