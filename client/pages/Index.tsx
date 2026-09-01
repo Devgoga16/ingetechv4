@@ -25,6 +25,7 @@ import { Reveal } from "@/components/Reveal";
 import { solutions } from "@/data/solutions";
 import { projects } from "@/data/projects";
 import { videos } from "@/data/videos";
+import { clients } from "@/data/clients";
 import { scrollToId } from "@/lib/scroll";
 import { CONTACT, WHATSAPP_URL } from "@/lib/contact";
 
@@ -438,6 +439,42 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* ============================ NUESTROS CLIENTES ===================== */}
+      {clients.length > 0 && (
+        <section
+          aria-label="Nuestros clientes"
+          className="border-t border-hairline bg-white"
+        >
+          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-12">
+              <p className="shrink-0 text-center text-[11px] font-bold uppercase leading-relaxed tracking-[0.16em] text-foreground/45 lg:max-w-[11rem] lg:text-left">
+                Nuestros clientes:
+              </p>
+
+              <div className="hidden h-12 w-px bg-hairline lg:block" />
+
+              {/* Flex-wrap rather than a fixed column count: the strip has to
+                  hold however many logos the list grows to. */}
+              <div className="flex w-full flex-wrap items-center justify-center gap-x-10 gap-y-6 lg:justify-start">
+                {clients.map((client) => (
+                  <div
+                    key={client.name}
+                    className="flex h-14 items-center justify-center"
+                  >
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      loading="lazy"
+                      className="max-h-10 w-auto max-w-[8rem] object-contain opacity-80 transition-opacity duration-300 hover:opacity-100"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {activeProject && (
         <ProjectLightbox

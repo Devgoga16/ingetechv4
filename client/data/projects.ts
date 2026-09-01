@@ -54,9 +54,9 @@ export const projects: Project[] = [
   },
   {
     slug: "oficinas-parque-zonal-pachacutec",
-    name: "OFICINAS DEL PARQUE ZONAL PACHACUTEC",
+    name: "CASA DE LA JUVENTUD Y LA CULTURA",
     location: "VENTANILLA, LIMA",
-    images: ["/proyecto/ventanilla.jpeg"],
+    images: ["/proyecto/ventanilla2.jpeg", "/proyecto/ventanilla.jpeg"],
     description:
       "UN (01) ASCENSOR DE 800 KG - 5 PARADAS"
   },
