@@ -25,6 +25,7 @@ const navItems = [
   { label: "INICIO", hash: "#inicio", id: "inicio" },
   { label: "PROYECTOS", hash: "#proyectos", id: "proyectos" },
   { label: "SOLUCIONES", hash: "#servicios", id: "servicios" },
+  { label: "VIDEOS", hash: "#videos", id: "videos" },
   { label: "NOSOTROS", hash: "#nosotros", id: "nosotros" },
   { label: "CONTACTO", hash: "#contacto", id: "contacto" },
 ];

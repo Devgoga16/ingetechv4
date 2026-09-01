@@ -17,12 +17,14 @@ import { FeatureCard } from "@/components/FeatureCard";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { SolutionCard } from "@/components/SolutionCard";
 import { ProjectCard } from "@/components/ProjectCard";
+import { VideoCard } from "@/components/VideoCard";
 import { ProjectLightbox } from "@/components/ProjectLightbox";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/Reveal";
 import { solutions } from "@/data/solutions";
 import { projects } from "@/data/projects";
+import { videos } from "@/data/videos";
 import { scrollToId } from "@/lib/scroll";
 import { CONTACT, WHATSAPP_URL } from "@/lib/contact";
 
@@ -245,6 +247,40 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* ================================ VÍDEOS ============================ */}
+      {videos.length > 0 && (
+        <section id="videos" className="bg-ink-900 py-20 md:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <Reveal>
+              <SectionHeading
+                tone="dark"
+                eyebrow="En movimiento"
+                title="Videos"
+              />
+            </Reveal>
+
+            {/* Flex-wrap rather than a grid: cards keep their natural width,
+                so portrait and landscape videos can sit side by side without
+                one of them being stretched into the other's slot. */}
+            <div className="mt-14 flex flex-wrap items-start justify-center gap-6">
+              {videos.map((video, index) => (
+                <Reveal
+                  key={video.src}
+                  delay={index * 70}
+                  className={
+                    video.orientation === "portrait"
+                      ? "w-full max-w-[21rem] sm:max-w-[18rem]"
+                      : "w-full max-w-[36rem]"
+                  }
+                >
+                  <VideoCard video={video} index={index} />
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* =============================== NOSOTROS =========================== */}
       <section id="nosotros" className="bg-surface-subtle py-20 md:py-28">
