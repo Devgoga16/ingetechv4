@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { scrollToId } from "@/lib/scroll";
-import { CONTACT, WHATSAPP_URL } from "@/lib/contact";
+import { CONTACT, PHONES, WHATSAPP_URL, telHref } from "@/lib/contact";
 import { solutions } from "@/data/solutions";
 import { cn } from "@/lib/utils";
 
@@ -607,12 +607,17 @@ function SiteFooter({ onNavigate }: { onNavigate: (hash: string) => void }) {
               </li>
               <li className="flex items-start gap-2.5">
                 <Phone size={15} className="mt-0.5 shrink-0 text-primary" />
-                <a
-                  href={CONTACT.phoneHref}
-                  className="transition-colors hover:text-primary"
-                >
-                  {CONTACT.phone}
-                </a>
+                <span className="flex flex-col gap-1">
+                  {PHONES.map((phone) => (
+                    <a
+                      key={phone.digits}
+                      href={telHref(phone)}
+                      className="transition-colors hover:text-primary"
+                    >
+                      {phone.display}
+                    </a>
+                  ))}
+                </span>
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail size={15} className="mt-0.5 shrink-0 text-primary" />

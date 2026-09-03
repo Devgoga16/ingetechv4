@@ -67,5 +67,21 @@ export const projects: Project[] = [
     images: ["/proyecto/municallao.jpeg"],
     description:
       "UN (01) ELEVADOR DE 250 KG - 2 PARADAS Y UNA (01) PLATAFORMA SALVA ALTURA"
+  },
+  {
+    slug: "farmacia-universal",
+    name: "FARMACIA UNIVERSAL",
+    location: "LIMA",
+    images: ["/proyecto/farmaciauniversal.jpeg"],
+    description:
+      "MODERNIZACIÓN DE ASCENSOR Y SALVA ALTURA"
+  },
+  {
+    slug: "cristo-salvador",
+    name: "CRISTO SALVADOR",
+    location: "LIMA",
+    images: ["/proyecto/cristosalvadorproyecto.jpeg"],
+    description:
+      "MODERNIZACIÓN DE UN ELEVADOR HIDRAULICO"
   }
 ];

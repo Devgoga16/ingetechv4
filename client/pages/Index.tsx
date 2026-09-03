@@ -19,6 +19,7 @@ import { SolutionCard } from "@/components/SolutionCard";
 import { ProjectCard } from "@/components/ProjectCard";
 import { VideoCard } from "@/components/VideoCard";
 import { ProjectLightbox } from "@/components/ProjectLightbox";
+import { ClientLogo } from "@/components/ClientLogo";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/Reveal";
@@ -27,7 +28,13 @@ import { projects } from "@/data/projects";
 import { videos } from "@/data/videos";
 import { clients } from "@/data/clients";
 import { scrollToId } from "@/lib/scroll";
-import { CONTACT, WHATSAPP_URL } from "@/lib/contact";
+import {
+  CONTACT,
+  PHONES,
+  WHATSAPP_PHONES,
+  telHref,
+  waHref,
+} from "@/lib/contact";
 
 const heroImages = [
   "/imgs/ascensores nuevos.jpg",
@@ -57,31 +64,49 @@ const features = [
   { icon: <Users size={26} />, title: "Trabajo en Equipo" },
 ];
 
-const contactChannels = [
+interface ChannelItem {
+  text: string;
+  href?: string;
+  external?: boolean;
+}
+
+/* Each channel holds a list, so a card can show several phone numbers. */
+const contactChannels: {
+  icon: typeof MapPin;
+  label: string;
+  items: ChannelItem[];
+}[] = [
   {
     icon: MapPin,
     label: "Ubicación",
-    value: CONTACT.address,
-    href: undefined,
+    items: [{ text: CONTACT.address }],
   },
   {
     icon: Phone,
-    label: "Teléfono",
-    value: CONTACT.phone,
-    href: CONTACT.phoneHref,
+    label: PHONES.length > 1 ? "Teléfonos" : "Teléfono",
+    items: PHONES.map((phone) => ({
+      text: phone.display,
+      href: telHref(phone),
+    })),
   },
   {
     icon: Mail,
     label: "Email",
-    value: CONTACT.email,
-    href: CONTACT.emailHref,
+    items: [{ text: CONTACT.email, href: CONTACT.emailHref }],
   },
-  {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    value: CONTACT.phone,
-    href: WHATSAPP_URL,
-  },
+  ...(WHATSAPP_PHONES.length > 0
+    ? [
+        {
+          icon: MessageCircle,
+          label: "WhatsApp",
+          items: WHATSAPP_PHONES.map((phone) => ({
+            text: phone.display,
+            href: waHref(phone),
+            external: true,
+          })),
+        },
+      ]
+    : []),
 ];
 
 export default function Index() {
@@ -389,44 +414,50 @@ export default function Index() {
             <Reveal className="space-y-3">
               {contactChannels.map((channel) => {
                 const Icon = channel.icon;
-                const content = (
-                  <>
+
+                return (
+                  <div
+                    key={channel.label}
+                    className="flex items-start gap-4 rounded-2xl border border-hairline bg-white p-5 transition-colors hover:border-primary/25"
+                  >
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-primary">
                       <Icon size={20} />
                     </span>
-                    <span className="min-w-0">
+
+                    <div className="min-w-0">
                       <span className="block text-xs font-bold uppercase tracking-wider text-foreground/50">
                         {channel.label}
                       </span>
-                      <span className="mt-1 block text-sm text-foreground/80">
-                        {channel.value}
-                      </span>
-                    </span>
-                  </>
-                );
 
-                const classes =
-                  "flex items-start gap-4 rounded-2xl border border-hairline bg-white p-5 transition-all";
-
-                return channel.href ? (
-                  <a
-                    key={channel.label}
-                    href={channel.href}
-                    target={
-                      channel.href.startsWith("http") ? "_blank" : undefined
-                    }
-                    rel={
-                      channel.href.startsWith("http")
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
-                    className={`${classes} hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-card`}
-                  >
-                    {content}
-                  </a>
-                ) : (
-                  <div key={channel.label} className={classes}>
-                    {content}
+                      {/* One row per value: a card can list several numbers,
+                          each its own link. */}
+                      <div className="mt-1 space-y-1">
+                        {channel.items.map((item) =>
+                          item.href ? (
+                            <a
+                              key={item.text}
+                              href={item.href}
+                              target={item.external ? "_blank" : undefined}
+                              rel={
+                                item.external
+                                  ? "noopener noreferrer"
+                                  : undefined
+                              }
+                              className="block text-sm text-foreground/80 transition-colors hover:text-primary"
+                            >
+                              {item.text}
+                            </a>
+                          ) : (
+                            <p
+                              key={item.text}
+                              className="text-sm text-foreground/80"
+                            >
+                              {item.text}
+                            </p>
+                          ),
+                        )}
+                      </div>
+                    </div>
                   </div>
                 );
               })}
@@ -460,14 +491,12 @@ export default function Index() {
                 {clients.map((client) => (
                   <div
                     key={client.name}
-                    className="flex h-14 items-center justify-center"
+                    // min-h rather than a fixed height: logos are capped at
+                    // 40px, but a long name set as a wordmark can wrap to three
+                    // lines and must be allowed to push the row taller.
+                    className="flex min-h-[3.5rem] items-center justify-center"
                   >
-                    <img
-                      src={client.logo}
-                      alt={client.name}
-                      loading="lazy"
-                      className="max-h-10 w-auto max-w-[8rem] object-contain opacity-80 transition-opacity duration-300 hover:opacity-100"
-                    />
+                    <ClientLogo client={client} />
                   </div>
                 ))}
               </div>
