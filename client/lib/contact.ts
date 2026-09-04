@@ -46,7 +46,7 @@ export const WHATSAPP_PHONES = PHONES.filter(
 
 /** Company contact details, shared across the header, footer and contact blocks. */
 export const CONTACT = {
-  address: "Urb. Las Delicias de Villa, Mz. G9, Lt.6, Chorrillos, Lima",
+  address: "Jr. Camaná 1178, Piso 10 - Oficina 1005, Lima",
   phone: PRIMARY_PHONE.display,
   phoneHref: telHref(PRIMARY_PHONE),
   email: "ventas@ingetech-elevators.com",
