@@ -20,7 +20,7 @@ let app: NodeHandler | undefined;
 
 async function getApp(): Promise<NodeHandler> {
   if (!app) {
-    const { createServer } = await import("../server");
+    const { createServer } = await import("../server/index.js");
     app = createServer() as unknown as NodeHandler;
   }
   return app;
