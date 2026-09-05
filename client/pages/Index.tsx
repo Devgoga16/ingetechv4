@@ -30,8 +30,10 @@ import { clients } from "@/data/clients";
 import { scrollToId } from "@/lib/scroll";
 import {
   CONTACT,
+  EMAILS,
   PHONES,
   WHATSAPP_PHONES,
+  mailHref,
   telHref,
   waHref,
 } from "@/lib/contact";
@@ -68,6 +70,8 @@ interface ChannelItem {
   text: string;
   href?: string;
   external?: boolean;
+  /** Etiqueta propia, para distinguir varios valores dentro de una tarjeta */
+  label?: string;
 }
 
 /* Each channel holds a list, so a card can show several phone numbers. */
@@ -91,8 +95,12 @@ const contactChannels: {
   },
   {
     icon: Mail,
-    label: "Email",
-    items: [{ text: CONTACT.email, href: CONTACT.emailHref }],
+    label: EMAILS.length > 1 ? "Emails" : "Email",
+    items: EMAILS.map((email) => ({
+      text: email.address,
+      href: mailHref(email),
+      label: email.label,
+    })),
   },
   ...(WHATSAPP_PHONES.length > 0
     ? [
@@ -432,30 +440,33 @@ export default function Index() {
                       {/* One row per value: a card can list several numbers,
                           each its own link. */}
                       <div className="mt-1 space-y-1">
-                        {channel.items.map((item) =>
-                          item.href ? (
-                            <a
-                              key={item.text}
-                              href={item.href}
-                              target={item.external ? "_blank" : undefined}
-                              rel={
-                                item.external
-                                  ? "noopener noreferrer"
-                                  : undefined
-                              }
-                              className="block text-sm text-foreground/80 transition-colors hover:text-primary"
-                            >
-                              {item.text}
-                            </a>
-                          ) : (
-                            <p
-                              key={item.text}
-                              className="text-sm text-foreground/80"
-                            >
-                              {item.text}
-                            </p>
-                          ),
-                        )}
+                        {channel.items.map((item) => (
+                          <div key={item.text}>
+                            {item.label && (
+                              <span className="block text-[11px] font-semibold text-primary">
+                                {item.label}
+                              </span>
+                            )}
+                            {item.href ? (
+                              <a
+                                href={item.href}
+                                target={item.external ? "_blank" : undefined}
+                                rel={
+                                  item.external
+                                    ? "noopener noreferrer"
+                                    : undefined
+                                }
+                                className="block text-sm text-foreground/80 transition-colors hover:text-primary"
+                              >
+                                {item.text}
+                              </a>
+                            ) : (
+                              <p className="text-sm text-foreground/80">
+                                {item.text}
+                              </p>
+                            )}
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>

@@ -44,13 +44,37 @@ export const WHATSAPP_PHONES = PHONES.filter(
   (phone) => phone.whatsapp !== false,
 );
 
+export interface EmailAddress {
+  address: string;
+  /** Etiqueta opcional que se dibuja encima, p. ej. "Oficina técnica". */
+  label?: string;
+}
+
+/**
+ * Correos de la empresa. Añade los que quieras a la lista.
+ *
+ * El PRIMERO es el principal: es el que sale en la barra superior, donde solo
+ * cabe uno. La sección de contacto y el pie muestran todos, cada uno con su
+ * etiqueta si la tiene.
+ */
+export const EMAILS: EmailAddress[] = [
+  { address: "ventas@ingetech-elevators.com" },
+  { address: "josemar@ingetech-elevators.com", label: "Oficina técnica" },
+];
+
+/** Enlace para escribir. */
+export const mailHref = (email: EmailAddress) => `mailto:${email.address}`;
+
+/** Correo principal, para los sitios donde solo cabe uno. */
+export const PRIMARY_EMAIL = EMAILS[0];
+
 /** Company contact details, shared across the header, footer and contact blocks. */
 export const CONTACT = {
   address: "Jr. Camaná 1178, Piso 10 - Oficina 1005, Lima",
   phone: PRIMARY_PHONE.display,
   phoneHref: telHref(PRIMARY_PHONE),
-  email: "ventas@ingetech-elevators.com",
-  emailHref: "mailto:ventas@ingetech-elevators.com",
+  email: PRIMARY_EMAIL.address,
+  emailHref: mailHref(PRIMARY_EMAIL),
   instagram: "https://www.instagram.com/ingetech_ascensores",
   linkedin: "https://www.linkedin.com/company/ingetech-ascensores",
   facebook: "https://www.facebook.com/ingetech.elevators",

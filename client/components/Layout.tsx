@@ -13,7 +13,14 @@ import {
 } from "lucide-react";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { scrollToId } from "@/lib/scroll";
-import { CONTACT, PHONES, WHATSAPP_URL, telHref } from "@/lib/contact";
+import {
+  CONTACT,
+  EMAILS,
+  PHONES,
+  WHATSAPP_URL,
+  mailHref,
+  telHref,
+} from "@/lib/contact";
 import { solutions } from "@/data/solutions";
 import { cn } from "@/lib/utils";
 
@@ -621,12 +628,23 @@ function SiteFooter({ onNavigate }: { onNavigate: (hash: string) => void }) {
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail size={15} className="mt-0.5 shrink-0 text-primary" />
-                <a
-                  href={CONTACT.emailHref}
-                  className="transition-colors hover:text-primary"
-                >
-                  {CONTACT.email}
-                </a>
+                <span className="flex flex-col gap-1.5">
+                  {EMAILS.map((email) => (
+                    <span key={email.address} className="block">
+                      {email.label && (
+                        <span className="block text-[11px] font-semibold text-primary">
+                          {email.label}
+                        </span>
+                      )}
+                      <a
+                        href={mailHref(email)}
+                        className="transition-colors hover:text-primary"
+                      >
+                        {email.address}
+                      </a>
+                    </span>
+                  ))}
+                </span>
               </li>
             </ul>
           </div>
