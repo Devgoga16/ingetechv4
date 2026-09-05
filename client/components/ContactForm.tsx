@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { CheckCircle2, Loader2, MessageCircle, Send } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Loader2, MessageCircle, Send } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { cn } from "@/lib/utils";
 import { WHATSAPP_URL } from "@/lib/contact";
@@ -20,6 +21,7 @@ const labelClasses =
   "mb-2 block text-xs font-semibold uppercase tracking-wider text-foreground/60";
 
 export function ContactForm({ context, className }: ContactFormProps) {
+  const navigate = useNavigate();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
@@ -28,7 +30,6 @@ export function ContactForm({ context, className }: ContactFormProps) {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSent, setIsSent] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -59,13 +60,22 @@ export function ContactForm({ context, className }: ContactFormProps) {
         throw new Error("Error al enviar el mensaje");
       }
 
-      toast({
-        title: "Mensaje enviado",
-        description: "Nos pondremos en contacto contigo pronto.",
-      });
-
       setFormData({ name: "", email: "", phone: "", message: "" });
-      setIsSent(true);
+
+      // La página de gracias es una URL propia, que es lo que Google Ads
+      // necesita para registrar la conversión. El resumen viaja en el state
+      // del router: no se guarda en la URL ni en el servidor.
+      navigate("/gracias", {
+        state: {
+          summary: {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+            context,
+          },
+        },
+      });
     } catch (error) {
       toast({
         title: "Error",
@@ -85,21 +95,6 @@ export function ContactForm({ context, className }: ContactFormProps) {
         className,
       )}
     >
-      {isSent && (
-        <div
-          role="status"
-          className="mb-6 flex items-start gap-3 rounded-2xl bg-emerald-50 p-4 text-sm text-emerald-900"
-        >
-          <CheckCircle2
-            size={20}
-            className="mt-0.5 shrink-0 text-emerald-600"
-          />
-          <p>
-            Recibimos tu mensaje. Nuestro equipo te contactará a la brevedad.
-          </p>
-        </div>
-      )}
-
       <form className="space-y-5" onSubmit={handleSubmit}>
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
