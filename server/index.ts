@@ -1,4 +1,11 @@
-import "dotenv/config";
+import dotenv from "dotenv";
+
+// .env.local primero. dotenv no sobrescribe lo que ya está definido, así que lo
+// que esté aquí gana sobre .env. Es donde deben vivir las credenciales: el
+// .gitignore ignora *.local, mientras que .env SÍ está versionado en este repo.
+dotenv.config({ path: ".env.local" });
+dotenv.config();
+
 import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
