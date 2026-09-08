@@ -26,7 +26,7 @@ export interface Phone {
  *   ];
  */
 export const PHONES: Phone[] = [
-  { display: "+51 929 970 920", digits: "51929970920" },
+  { display: "+51 932 738 491", digits: "51932738491" },
   { display: "+51 932 722 076", digits: "51932722076" },
 ];
 
