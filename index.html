@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/jpeg" href="/favicon.png" />
     <title>Ingetech - Soluciones en Elevación</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-18431196592"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      // send_page_view: false porque esto es una SPA. La vista de página la
+      // envía client/lib/analytics.ts en cada cambio de ruta, incluida la
+      // primera; si no, gtag contaría solo la carga inicial y nunca vería
+      // /gracias, que es la página de conversión.
+      gtag("config", "AW-18431196592", { send_page_view: false });
+    </script>
   </head>
 
   <body>

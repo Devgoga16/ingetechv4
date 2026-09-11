@@ -10,6 +10,7 @@ import {
 import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
 import { CONTACT, PHONES, WHATSAPP_URL, telHref } from "@/lib/contact";
+import { GOOGLE_ADS_CONVERSION_LABEL, trackConversion } from "@/lib/analytics";
 
 /** Lo que el formulario adjunta al navegar hasta aquí. */
 export interface ContactSummary {
@@ -34,6 +35,17 @@ export default function ThankYou() {
       document.title = previous;
     };
   }, []);
+
+  /*
+   * La conversión se registra solo si hay resumen, es decir, si se llegó aquí
+   * enviando el formulario. Entrar a /gracias directamente o recargar la página
+   * pierde ese estado y no cuenta, que es lo que queremos: si no, cualquier
+   * visita a la URL inflaría las conversiones y ensuciaría los datos de Ads.
+   */
+  useEffect(() => {
+    if (!summary) return;
+    trackConversion(GOOGLE_ADS_CONVERSION_LABEL);
+  }, [summary]);
 
   const rows = summary
     ? [
