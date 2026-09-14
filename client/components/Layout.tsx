@@ -475,28 +475,28 @@ export function Layout({ children }: LayoutProps) {
 
 const certifications = [
   {
-    code: "UNE",
-    name: "Normalización Española",
-    detail: "Para Posible Instalación y Seguridad del Usuario",
+    code: "NORMA TÉCNICA A.120",
+    name: "Accesibilidad Universal en edificaciones",
+    detail: "Reglamento Nacional de Edificaciones",
   },
   {
-    code: "DIRECTIVA 2006/42/CE",
-    name: "Para la Comercialización y Puesta en Servicio de Maquinarias",
-  },
-  { code: "ISO", name: "45001", detail: "Gestión de Calidad" },
-  {
-    code: "N.A.120",
-    name: "del Documento Nacional de Edificaciones (RNE)",
+    code: "NORMA UNE-EN 81-20",
+    name: "Reglas de seguridad para la construcción e instalación de ascensores",
   },
   {
-    code: "UNE",
-    name: "Normalización Española 61891",
-    detail: "Seguridad en Escaleras Mecánicas y Pasillo Móviles",
+    code: "NORMA UNE-EN 115",
+    name: "Seguridad de escaleras mecánicas y andenes móviles",
   },
   {
-    code: "ISO 14881",
-    name: "Sistema de Gestión Ambiental",
-    detail: "Transporte Mecanizado Número III a",
+    code: "NORMA TÉCNICA EM.070",
+    name: "Transporte mecánico",
+    detail: "Reglamento Nacional de Edificaciones",
+  },
+  { code: "ISO 9001", name: "Gestión de Calidad" },
+  { code: "ISO 14001", name: "Sistemas de gestión ambiental" },
+  {
+    code: "ISO 25745",
+    name: "Rendimiento energético de ascensores, escaleras mecánicas y andenes móviles",
   },
 ];
 
@@ -509,9 +509,12 @@ function SiteFooter({ onNavigate }: { onNavigate: (hash: string) => void }) {
           <h3 className="mb-8 text-center text-[11px] font-bold uppercase tracking-[0.18em] text-white/50">
             Suministramos equipos que cumplen con:
           </h3>
-          <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3 lg:grid-cols-6">
-            {certifications.map((cert, index) => (
-              <div key={index} className="text-center">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-8">
+            {certifications.map((cert) => (
+              <div
+                key={cert.code}
+                className="w-[calc(50%_-_12px)] text-center md:w-[calc((100%_-_48px)/3)] lg:w-[calc((100%_-_72px)/4)]"
+              >
                 <p className="mb-2 text-xs font-bold text-primary">
                   {cert.code}
                 </p>

@@ -70,7 +70,7 @@ export const solutions: Solution[] = [
   {
     slug: "mantenimiento",
     category: "Mantenimiento",
-    title: "Servicios de Mantenimiento",
+    title: "Servicios de Mantenimiento de Ascensores",
     summary:
       "Mantenimiento preventivo y correctivo para garantizar el óptimo funcionamiento",
     icon: Zap,
@@ -87,7 +87,7 @@ export const solutions: Solution[] = [
   {
     slug: "consultoria-e-inspeccion",
     category: "Consultoría e inspección",
-    title: "Consultoría e Inspección",
+    title: "Consultoría e Inspección de Ascensores",
     summary:
       "Asesoramiento técnico y evaluaciones profesionales para tus proyectos de elevación",
     icon: Shield,
@@ -104,7 +104,7 @@ export const solutions: Solution[] = [
   {
     slug: "repuestos",
     category: "Repuestos",
-    title: "Venta de Repuestos",
+    title: "Venta de Repuestos de Ascensores",
     summary:
       "Repuestos originales y de calidad para todos los sistemas de elevación",
     icon: TrendingUp,
